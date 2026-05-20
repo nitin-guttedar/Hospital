@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { 
   Phone, Mail, Clock, MapPin, Calendar, Check, ChevronRight, ChevronLeft, 
   Sun, Moon, Menu, X, Shield, Image, Heart, Info, ExternalLink, User, Trash2, 
@@ -67,6 +68,55 @@ const insuranceCompanies = [
   "Navi General Insurance Ltd.",
   "Shriram General Insurance Co. Ltd."
 ];
+
+// SEO Meta Data for different pages
+const seoData = {
+  home: {
+    title: 'Gunjigavi Multispeciality Hospital Athani - Expert Medical Care',
+    description: 'Gunjigavi Multispeciality Hospital Athani offers pediatric, gynecology, and general medicine services. Trusted by families in Belagavi district. Ayushman Bharat empanelled.',
+    keywords: 'hospital in Athani, multispeciality hospital Athani, Gunjigavi Hospital, family hospital, Belagavi hospital'
+  },
+  about: {
+    title: 'About Gunjigavi Multispeciality Hospital - Our Mission & Values',
+    description: 'Learn about Gunjigavi Hospital\'s mission of compassionate, ethical healthcare. Three specialist doctors providing family-focused care near Shivaji Circle, Athani.',
+    keywords: 'about hospital, Athani hospital, medical services, healthcare quality, specialist doctors'
+  },
+  doctors: {
+    title: 'Specialist Doctors at Gunjigavi Hospital - Pediatrician, Gynecologist, Physician',
+    description: 'Meet our experienced consultants: Dr. Anand Gunjigavi (Pediatrics), Dr. Rohini Gunjigavi (Gynecology), Dr. Sai Shruthi Gunjigavi (General Medicine).',
+    keywords: 'pediatrician Athani, gynecologist Athani, general physician Athani, specialist doctors Belagavi, Dr Anand, Dr Rohini'
+  },
+  services: {
+    title: 'Departments & Medical Services - In-House & Visiting Specialists',
+    description: 'In-house departments: Pediatrics & Neonatology, Obstetrics & Gynecology, General Medicine. Visiting specialists: Dermatology, ENT, Infertility. Emergency support and pharmacy available.',
+    keywords: 'pediatrics service, gynecology care, general medicine, dermatology, ENT, infertility specialist, medical departments, healthcare services Athani'
+  },
+  appointments: {
+    title: 'Book Appointment Online - Gunjigavi Hospital Athani',
+    description: 'Schedule your appointment online, via call (+91-8197270975), WhatsApp, or visit our OPD counter. Easy booking with confirmed appointment slots.',
+    keywords: 'book appointment, online consultation, hospital appointment Athani, schedule doctor visit, medical booking'
+  },
+  insurance: {
+    title: 'Insurance & Schemes - Government & Private Insurance Accepted',
+    description: 'Gunjigavi Hospital accepts ABARK (PM-JAY), Yashaswini, KASS, Dharmastala Arogya Yojana, KLE, Nirani, KSRTC schemes, and all private health insurance for cashless treatment.',
+    keywords: 'Ayushman Bharat, cashless insurance, health insurance, PM-JAY, Yashaswini, KASS, insurance schemes, reimbursement, health coverage Athani'
+  },
+  gallery: {
+    title: 'Hospital Gallery - Facilities & Infrastructure at Gunjigavi',
+    description: 'View our state-of-the-art hospital facilities, modern consultation rooms, pediatric care areas, and maternity wards at Gunjigavi Hospital Athani.',
+    keywords: 'hospital gallery, medical facility, infrastructure, consultation rooms, pediatric care, maternity ward'
+  },
+  blogs: {
+    title: 'Healthcare Blogs - Expert Insights on Pediatrics, Gynecology, General Medicine',
+    description: 'Read expert articles on specialist care: Consultant Pediatrician, Obstetrician & Gynecologist, and Consultant Physician services at Gunjigavi Hospital.',
+    keywords: 'healthcare blog, medical articles, pediatrician blog, gynecology, general medicine insights, specialist care'
+  },
+  contact: {
+    title: 'Contact Gunjigavi Hospital - Location, Phone, Hours & Directions',
+    description: 'Visit us at Deshpande Nagar, Athani (591304). Emergency: 8197270975 | OPD: 9482384887 | Email: hospitalgunjigavi@gmail.com',
+    keywords: 'contact hospital, hospital location, phone number, address Athani, hospital hours, directions'
+  }
+};
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -202,6 +252,20 @@ function App() {
 
   return (
     <>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>{seoData[activeTab]?.title || 'Gunjigavi Multispeciality Hospital Athani'}</title>
+        <meta name="description" content={seoData[activeTab]?.description || 'Gunjigavi Multispeciality Hospital providing expert healthcare in Athani'} />
+        <meta name="keywords" content={seoData[activeTab]?.keywords || 'hospital, healthcare, medical services'} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Gunjigavi Multispeciality Hospital" />
+        <meta property="og:title" content={seoData[activeTab]?.title || 'Gunjigavi Multispeciality Hospital Athani'} />
+        <meta property="og:description" content={seoData[activeTab]?.description || 'Expert healthcare services'} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://gunjigavi-multispeciality-hospital.vercel.app/" />
+        <meta name="theme-color" content="#0d9488" />
+      </Helmet>
+
       {/* 24/7 Red Alert Emergency Ribbon */}
       <div className="emergency-strip">
         <AlertCircle size={16} />
@@ -263,6 +327,7 @@ function App() {
             <li><a className={activeTab === 'appointments' ? 'active' : ''} onClick={() => handleTabClick('appointments')}>Appointments</a></li>
             <li><a className={activeTab === 'insurance' ? 'active' : ''} onClick={() => handleTabClick('insurance')}>Insurance & Schemes</a></li>
             <li><a className={activeTab === 'gallery' ? 'active' : ''} onClick={() => handleTabClick('gallery')}>Gallery</a></li>
+            <li><a className={activeTab === 'blogs' ? 'active' : ''} onClick={() => handleTabClick('blogs')}>Blogs</a></li>
             <li><a className={activeTab === 'contact' ? 'active' : ''} onClick={() => handleTabClick('contact')}>Contact Us</a></li>
           </ul>
 
@@ -284,6 +349,14 @@ function App() {
           <CheckCircle size={20} color="var(--primary)" />
           <span>{toastMessage}</span>
         </div>
+      )}
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-menu-overlay" 
+          onClick={() => setMobileMenuOpen(false)}
+        ></div>
       )}
 
       {/* Main Pages Render Area */}
@@ -524,52 +597,120 @@ function App() {
               <h2 className="section-title">Departments & Services</h2>
               <p className="section-subtitle">Advanced diagnostics and outpatient treatments tailored for families</p>
               
-              <div className="services-grid">
-                {/* Pediatrics */}
-                <div className="service-card">
-                  <div className="service-card-icon"><Heart size={24} /></div>
-                  <h3 className="service-card-title">Pediatrics</h3>
-                  <p className="service-card-desc">Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance.</p>
-                  <ul className="service-list">
-                    <li><Check size={14} /> Newborn & infant checkups</li>
-                    <li><Check size={14} /> Childhood fevers & infections</li>
-                    <li><Check size={14} /> Nutrition & growth assessment</li>
-                    <li><Check size={14} /> Vaccinations & immunizations</li>
-                  </ul>
-                </div>
+              {/* IN HOUSE DEPARTMENTS */}
+              <div style={{ marginBottom: '50px' }}>
+                <h3 className="services-section-heading">
+                  <Heart size={24} style={{ color: 'var(--primary)' }} />
+                  In-House Departments
+                </h3>
+                <div className="services-grid">
+                  {/* Pediatrics & Neonatology */}
+                  <div className="service-card">
+                    <div className="service-card-icon"><Heart size={24} /></div>
+                    <h3 className="service-card-title">Pediatrics & Neonatology</h3>
+                    <p className="service-card-desc">Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Newborn & infant checkups</li>
+                      <li><Check size={14} /> Childhood fevers & infections</li>
+                      <li><Check size={14} /> Nutrition & growth assessment</li>
+                      <li><Check size={14} /> Vaccinations & immunizations</li>
+                    </ul>
+                  </div>
 
-                {/* Obstetrics & Gynaecology */}
-                <div className="service-card">
-                  <div className="service-card-icon"><Activity size={24} /></div>
-                  <h3 className="service-card-title">Obstetrics & Gynaecology</h3>
-                  <p className="service-card-desc">Empathetic care mapping high-risk pregnancies, deliveries, postnatal care and female wellness disorders.</p>
-                  <ul className="service-list">
-                    <li><Check size={14} /> Antenatal pregnancy checkups</li>
-                    <li><Check size={14} /> Normal & assisted deliveries</li>
-                    <li><Check size={14} /> Postnatal & lactation support</li>
-                    <li><Check size={14} /> PCOS & menstrual treatments</li>
-                  </ul>
-                </div>
+                  {/* Obstetrics & Gynaecology */}
+                  <div className="service-card">
+                    <div className="service-card-icon"><Activity size={24} /></div>
+                    <h3 className="service-card-title">Obstetrics & Gynaecology</h3>
+                    <p className="service-card-desc">Empathetic care mapping high-risk pregnancies, deliveries, postnatal care and female wellness disorders.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Antenatal pregnancy checkups</li>
+                      <li><Check size={14} /> Normal & assisted deliveries</li>
+                      <li><Check size={14} /> Postnatal & lactation support</li>
+                      <li><Check size={14} /> PCOS & menstrual treatments</li>
+                    </ul>
+                  </div>
 
-                {/* General Medicine */}
-                <div className="service-card">
-                  <div className="service-card-icon"><Shield size={24} /></div>
-                  <h3 className="service-card-title">General Medicine</h3>
-                  <p className="service-card-desc">Broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions.</p>
-                  <ul className="service-list">
-                    <li><Check size={14} /> Diabetes & hypertension control</li>
-                    <li><Check size={14} /> Thyroid & hormone management</li>
-                    <li><Check size={14} /> Cardiac & stomach disorders</li>
-                    <li><Check size={14} /> Annual full body check-ups</li>
-                  </ul>
+                  {/* General Medicine */}
+                  <div className="service-card">
+                    <div className="service-card-icon"><Shield size={24} /></div>
+                    <h3 className="service-card-title">General Medicine</h3>
+                    <p className="service-card-desc">Broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Diabetes & hypertension control</li>
+                      <li><Check size={14} /> Thyroid & hormone management</li>
+                      <li><Check size={14} /> Cardiac & stomach disorders</li>
+                      <li><Check size={14} /> Annual full body check-ups</li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
 
-                {/* Supporting Services */}
-                <div className="service-card" style={{ gridColumn: 'span 3' }}>
-                  <div className="service-card-icon" style={{ width: '40px', height: '40px' }}><PlusCircle size={20} /></div>
-                  <h3 className="service-card-title">Supporting Services</h3>
+              {/* VISITING SPECIALISTS */}
+              <div style={{ marginBottom: '50px' }}>
+                <h3 className="services-section-heading">
+                  <User size={24} style={{ color: 'var(--accent)' }} />
+                  Visiting Specialists
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
+                  For selected departments - Expert visiting doctors available for specialized consultations
+                </p>
+                <div className="services-grid">
+                  {/* Dermatology */}
+                  <div className="service-card">
+                    <div className="service-card-icon" style={{ background: 'rgba(217, 119, 6, 0.15)', color: 'var(--accent)' }}>
+                      <Shield size={24} />
+                    </div>
+                    <h3 className="service-card-title">Dermatology</h3>
+                    <p className="service-card-desc">Expert dermatological consultations for skin conditions, cosmetic concerns, and dermatological procedures.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Skin disease diagnosis & treatment</li>
+                      <li><Check size={14} /> Acne & pigmentation management</li>
+                      <li><Check size={14} /> Allergy testing</li>
+                      <li><Check size={14} /> Dermatological procedures</li>
+                    </ul>
+                  </div>
+
+                  {/* ENT */}
+                  <div className="service-card">
+                    <div className="service-card-icon" style={{ background: 'rgba(217, 119, 6, 0.15)', color: 'var(--accent)' }}>
+                      <Info size={24} />
+                    </div>
+                    <h3 className="service-card-title">ENT (Otolaryngology)</h3>
+                    <p className="service-card-desc">Specialized ear, nose, and throat consultations for hearing and voice disorders.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Hearing assessment & audiometry</li>
+                      <li><Check size={14} /> Sinus & nasal conditions</li>
+                      <li><Check size={14} /> Throat & voice disorders</li>
+                      <li><Check size={14} /> Pediatric ENT consultations</li>
+                    </ul>
+                  </div>
+
+                  {/* Infertility Specialist */}
+                  <div className="service-card">
+                    <div className="service-card-icon" style={{ background: 'rgba(217, 119, 6, 0.15)', color: 'var(--accent)' }}>
+                      <Heart size={24} />
+                    </div>
+                    <h3 className="service-card-title">Infertility Specialist</h3>
+                    <p className="service-card-desc">Comprehensive fertility consultations and reproductive health guidance for couples.</p>
+                    <ul className="service-list">
+                      <li><Check size={14} /> Fertility assessments & investigations</li>
+                      <li><Check size={14} /> Reproductive counselling</li>
+                      <li><Check size={14} /> Treatment planning & referrals</li>
+                      <li><Check size={14} /> Lifestyle & diagnostic guidance</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Supporting Services */}
+              <div>
+                <h3 className="services-section-heading">
+                  <PlusCircle size={24} style={{ color: 'var(--primary)' }} />
+                  Supporting Services
+                </h3>
+                <div className="service-card" style={{ gridColumn: 'span 1' }}>
                   <p className="service-card-desc">To ensure a smooth healing process for patients and families, our support includes:</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                     <ul className="service-list" style={{ border: 'none', paddingTop: 0 }}>
                       <li><Check size={14} /> 24/7 emergency support desk</li>
                       <li><Check size={14} /> Inpatient & Day-care facilities</li>
@@ -580,7 +721,7 @@ function App() {
                     </ul>
                     <ul className="service-list" style={{ border: 'none', paddingTop: 0 }}>
                       <li><Check size={14} /> Cashless Insurance help desk</li>
-                      <li><Check size={14} /> Ayushman Bharat scheme support</li>
+                      <li><Check size={14} /> Multiple scheme support</li>
                     </ul>
                   </div>
                 </div>
@@ -783,48 +924,135 @@ function App() {
               <h2 className="section-title">Insurance & Schemes</h2>
               <p className="section-subtitle">Government welfare benefits and cashless insurance tieups</p>
               
-              <div className="insurance-card">
-                <div className="insurance-intro-flex">
-                  <div className="insurance-intro-desc">
-                    <h3>Ayushman Bharat & Cashless Hospital Support</h3>
-                    <p>
-                      Gunjigavi Multispeciality Hospital Athani supports patients by accepting a wide range of company health insurance plans and major government health schemes such as Ayushman Bharat PM-JAY, enabling eligible patients to avail cashless or reimbursement facilities as per policy terms.
-                    </p>
-                    <p>
-                      We strive to ensure that finance never stands in the way of premium treatment, offering step-by-step paperwork support directly from our admissions counter.
-                    </p>
-                  </div>
-                  
-                  {/* Government Schemes badge */}
-                  <div className="government-badge">
-                    <Shield size={36} style={{ marginBottom: '10px' }} />
-                    <span className="govt-badge-title">Empanelled Hospital</span>
-                    <span className="govt-badge-desc">Ayushman Bharat PM-JAY (Government of India Scheme Active)</span>
-                  </div>
-                </div>
-
-                {/* Insurance companies list */}
-                <h4 className="insurance-list-title">Accepted Insurance Providers (India)</h4>
-                <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '15px' }}>
-                  Indicative list of health insurance companies commonly serving patients (verify actual cashless tie-up status at reception desk prior to admission):
+              {/* GOVERNMENT SCHEMES */}
+              <div style={{ marginBottom: '50px' }}>
+                <h3 className="services-section-heading">
+                  <Shield size={24} style={{ color: 'var(--primary)' }} />
+                  Government Health Schemes
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
+                  For selected departments - Empanelled under multiple government schemes
                 </p>
-                <div className="insurance-grid">
-                  {insuranceCompanies.map((c, i) => (
-                    <div className="insurance-item" key={i}>
-                      <Check size={14} />
-                      <span>{c}</span>
+                <div className="schemes-grid">
+                  {/* ABARK */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><Shield size={24} /></div>
+                    <h4 className="scheme-title">ABARK (PM-JAY)</h4>
+                    <p className="scheme-desc">Ayushman Bharat Arogya Karnataka - Government health insurance scheme providing cashless treatment for eligible beneficiaries.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: Government approved procedures</span>
+                      <span>Eligibility: Check PM-JAY portal</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
 
-                {/* Reception support helpbox */}
-                <div className="guidance-box">
-                  <Info className="guidance-icon" size={24} />
-                  <div className="guidance-text">
-                    <h4>Insurance Admission Guidance</h4>
-                    <p>
-                      Our insurance and scheme help desk at the hospital reception assists patients and families with eligibility checks, document submissions, pre-authorisations, and claim processing. Please bring the patient's Aadhaar card, Ration card (for PM-JAY), and insurance policy details during admission.
-                    </p>
+                  {/* Yashaswini */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><Heart size={24} /></div>
+                    <h4 className="scheme-title">Yashaswini Yojana</h4>
+                    <p className="scheme-desc">State-sponsored health insurance scheme for cooperative members and farmers in Karnataka with cashless hospitalization benefits.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: Cooperative members, farmers</span>
+                      <span>Cashless: Yes, for network hospitals</span>
+                    </div>
+                  </div>
+
+                  {/* KASS */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><CheckCircle size={24} /></div>
+                    <h4 className="scheme-title">KASS</h4>
+                    <p className="scheme-desc">Karnataka Arogya Sanjeevini Scheme - Exclusive health insurance scheme for government employees and their families in Karnataka.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: Govt employees & families</span>
+                      <span>Benefits: Comprehensive healthcare</span>
+                    </div>
+                  </div>
+
+                  {/* Dharmastala */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><Heart size={24} /></div>
+                    <h4 className="scheme-title">Dharmastala Arogya Yojana</h4>
+                    <p className="scheme-desc">Arogya Raksha and Sampurna Suraksha schemes providing health insurance coverage for free medical treatment.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: Arogya Raksha & Suraksha</span>
+                      <span>Access: Through partner hospitals</span>
+                    </div>
+                  </div>
+
+                  {/* KLE & Nirani */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><CheckCircle size={24} /></div>
+                    <h4 className="scheme-title">KLE & Nirani Health Cards</h4>
+                    <p className="scheme-desc">Employer health benefit schemes providing cashless and reimbursement facilities for employees and their dependents.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: Employer groups</span>
+                      <span>Cashless: Yes, for network hospitals</span>
+                    </div>
+                  </div>
+
+                  {/* KSRTC */}
+                  <div className="scheme-card">
+                    <div className="scheme-icon"><Shield size={24} /></div>
+                    <h4 className="scheme-title">KSRTC Cashless Scheme</h4>
+                    <p className="scheme-desc">Karnataka State Road Transport Corporation scheme providing cashless medical treatment for employees and their families.</p>
+                    <div className="scheme-highlights">
+                      <span>Coverage: KSRTC employees & families</span>
+                      <span>Cashless: Yes, approved procedures</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* PRIVATE HEALTH INSURANCE */}
+              <div style={{ marginBottom: '50px' }}>
+                <h3 className="services-section-heading">
+                  <Heart size={24} style={{ color: 'var(--accent)' }} />
+                  Private Health Insurance Accepted
+                </h3>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
+                  For selected departments - We accept all major health insurance companies
+                </p>
+                <div className="insurance-card">
+                  <div className="insurance-intro-flex">
+                    <div className="insurance-intro-desc">
+                      <h3>All Health Insurance Companies Accepted</h3>
+                      <p>
+                        Gunjigavi Multispeciality Hospital Athani accepts health insurance from all major insurance providers in India. Our cashless facilities enable seamless medical treatment without upfront payment, making healthcare affordable and accessible.
+                      </p>
+                      <p>
+                        We handle all documentation and pre-authorization requirements directly with your insurance company, ensuring hassle-free admission and treatment.
+                      </p>
+                    </div>
+                    
+                    <div className="government-badge">
+                      <CheckCircle size={36} style={{ marginBottom: '10px' }} />
+                      <span className="govt-badge-title">Accepted</span>
+                      <span className="govt-badge-desc">All Insurance Companies (Verify at Reception)</span>
+                    </div>
+                  </div>
+
+                  {/* Insurance companies list */}
+                  <h4 className="insurance-list-title">Indicative List of Accepted Insurers</h4>
+                  <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '15px' }}>
+                    We work with a wide range of health insurance providers. Please bring your insurance policy details during admission and verify cashless tie-up status at our reception desk.
+                  </p>
+                  <div className="insurance-grid">
+                    {insuranceCompanies.map((c, i) => (
+                      <div className="insurance-item" key={i}>
+                        <Check size={14} />
+                        <span>{c}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Reception support helpbox */}
+                  <div className="guidance-box">
+                    <Info className="guidance-icon" size={24} />
+                    <div className="guidance-text">
+                      <h4>Insurance & Scheme Admission Guidance</h4>
+                      <p>
+                        Our insurance and scheme help desk at the hospital reception assists patients and families with eligibility checks, scheme verification, document submissions, pre-authorisations, and claim processing. Please bring the patient's Aadhaar card, Insurance policy/scheme card, and relevant documents during admission.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -894,6 +1122,151 @@ function App() {
                   </div>
                 </div>
               )}
+            </div>
+          </section>
+        )}
+
+        {/* 7. BLOGS MODULE */}
+        {activeTab === 'blogs' && (
+          <section className="section animate-fade-up">
+            <div className="container">
+              <h2 className="section-title">Expert Healthcare Insights</h2>
+              <p className="section-subtitle">Learn about our specialist services and expert care</p>
+              
+              <div className="blogs-grid">
+                {/* Blog 1: Pediatrician */}
+                <div className="blog-card">
+                  <div className="blog-header">
+                    <div className="blog-icon"><Heart size={32} /></div>
+                    <h3 className="blog-title">Consultant Pediatrician – Complete Child Health</h3>
+                    <p className="blog-category">Child Health & Development</p>
+                  </div>
+                  
+                  <div className="blog-content">
+                    <p className="blog-intro">
+                      A Consultant Pediatrician specializes in the physical, emotional and developmental health of infants, children and adolescents. From newborn care to teenage health issues, our pediatrician is your child's primary medical partner.
+                    </p>
+                    
+                    <div className="blog-section">
+                      <h4>Our Pediatric Services Include:</h4>
+                      <ul className="blog-list">
+                        <li><Check size={16} /> <strong>Newborn & Infant Care</strong> – Monitoring feeding, weight gain, early development and safe parenting guidance</li>
+                        <li><Check size={16} /> <strong>Childhood Illness Management</strong> – Treatment for fever, cough, infections, allergies and asthma</li>
+                        <li><Check size={16} /> <strong>Growth & Development Tracking</strong> – Regular monitoring of milestones and early identification of delays</li>
+                        <li><Check size={16} /> <strong>Vaccination & Immunisation</strong> – Planned vaccinations with counselling on benefits and post-vaccination care</li>
+                        <li><Check size={16} /> <strong>Long-term Chronic Care</strong> – Ongoing management for asthma, allergies and nutrition guidance</li>
+                      </ul>
+                    </div>
+                    
+                    <p className="blog-highlight">
+                      <strong>Why This Matters:</strong> When searching for a child specialist doctor in Athani, families want someone clinically strong, approachable and child-friendly. Our pediatric services focus on building trust with both children and parents through clear communication and gentle care.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Blog 2: OB-GYN */}
+                <div className="blog-card">
+                  <div className="blog-header">
+                    <div className="blog-icon"><Activity size={32} /></div>
+                    <h3 className="blog-title">Consultant Obstetrician & Gynaecologist – Women's Health</h3>
+                    <p className="blog-category">Women's Health & Safe Motherhood</p>
+                  </div>
+                  
+                  <div className="blog-content">
+                    <p className="blog-intro">
+                      An Obstetrician & Gynaecologist (OB-GYN) specializes in pregnancy, childbirth and the female reproductive system. Obstetrics focuses on pregnancy and delivery, while gynaecology addresses women's reproductive health across all life stages.
+                    </p>
+                    
+                    <div className="blog-section">
+                      <h4>Our Obstetric & Gynaecology Services Include:</h4>
+                      <ul className="blog-list">
+                        <li><Check size={16} /> <strong>Pre-conception Counselling</strong> – Health check-ups and guidance for couples planning pregnancy</li>
+                        <li><Check size={16} /> <strong>Antenatal Care</strong> – Regular pregnancy check-ups, monitoring of mother and baby, high-risk pregnancy management</li>
+                        <li><Check size={16} /> <strong>Delivery & Childbirth</strong> – Normal delivery, assisted delivery and caesarean care with continuous monitoring</li>
+                        <li><Check size={16} /> <strong>Postnatal Support</strong> – Post-delivery care, breastfeeding guidance and emotional support</li>
+                        <li><Check size={16} /> <strong>Gynaecology Services</strong> – Treatment for menstrual disorders, PCOS, fibroids, infections and menopausal symptoms</li>
+                      </ul>
+                    </div>
+                    
+                    <p className="blog-highlight">
+                      <strong>Why This Matters:</strong> Women seeking a lady doctor for pregnancy in Athani want someone who understands their concerns, respects their privacy and explains every step clearly. Our specialist provides calm, respectful and confidential care.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Blog 3: General Physician */}
+                <div className="blog-card">
+                  <div className="blog-header">
+                    <div className="blog-icon"><Shield size={32} /></div>
+                    <h3 className="blog-title">Consultant Physician (General Medicine) – Adult Health</h3>
+                    <p className="blog-category">Adult Medicine & Chronic Disease Management</p>
+                  </div>
+                  
+                  <div className="blog-content">
+                    <p className="blog-intro">
+                      A Consultant Physician in General Medicine is trained to diagnose and treat a wide range of medical problems in adults, from acute infections to complex long-term conditions, often acting as the central coordinator of care for patients with multiple health issues.
+                    </p>
+                    
+                    <div className="blog-section">
+                      <h4>Our General Medicine Services Include:</h4>
+                      <ul className="blog-list">
+                        <li><Check size={16} /> <strong>Acute Medical Assessment</strong> – Detailed evaluation for fever, infections, chest pain, breathlessness and unexplained symptoms</li>
+                        <li><Check size={16} /> <strong>Chronic Disease Management</strong> – Diagnosis and long-term care for diabetes, hypertension, thyroid disorders and lipid problems</li>
+                        <li><Check size={16} /> <strong>Lifestyle & Prevention</strong> – Counselling on diet, exercise, weight management and smoking cessation</li>
+                        <li><Check size={16} /> <strong>Preventive Health Check-ups</strong> – Full body check-ups for people with family history of heart disease or chronic illness</li>
+                        <li><Check size={16} /> <strong>Long-term Follow-up</strong> – Individualized care plans and coordination of investigations for multiple conditions</li>
+                      </ul>
+                    </div>
+                    
+                    <p className="blog-highlight">
+                      <strong>Why This Matters:</strong> When searching for a general physician in Athani, patients want a doctor who listens carefully, investigates thoroughly and gives practical advice for daily life. Our services provide clear diagnosis and realistic treatment plans.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why Choose Gunjigavi for Specialist Care */}
+              <div className="blog-why-choose-section">
+                <h3 className="blog-section-title">Why Choose Gunjigavi for Specialist Care?</h3>
+                
+                <div className="why-choose-grid">
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><Check size={24} /></div>
+                    <h4>Three Specialists Under One Roof</h4>
+                    <p>Your entire family can receive care at one location – Pediatrician, Gynecologist and General Physician working together for coordinated care.</p>
+                  </div>
+                  
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><Heart size={24} /></div>
+                    <h4>Family-Friendly Environment</h4>
+                    <p>Child-friendly consultation style, private spaces for women's health consultations, and hospital design that makes families feel comfortable and welcome.</p>
+                  </div>
+                  
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><Shield size={24} /></div>
+                    <h4>Ethical, Evidence-Based Practice</h4>
+                    <p>Our consultants follow established medical guidelines, keep patients informed about diagnosis and treatment options, and encourage informed decision-making.</p>
+                  </div>
+                  
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><MapPin size={24} /></div>
+                    <h4>Convenient Access & Flexible Hours</h4>
+                    <p>Located near Shivaji Circle with morning and evening consulting hours suitable for working individuals and school-going children.</p>
+                  </div>
+                  
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><CheckCircle size={24} /></div>
+                    <h4>Insurance & Scheme Support</h4>
+                    <p>Empanelled under Ayushman Bharat PM-JAY and works with many leading health insurance companies for cashless or reimbursement options.</p>
+                  </div>
+                  
+                  <div className="why-choose-card">
+                    <div className="why-choose-icon"><Heart size={24} /></div>
+                    <h4>Long-term Care Relationships</h4>
+                    <p>We aim to be your family hospital – for emergencies, preventive health, routine check-ups and consistent long-term follow-up.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         )}
@@ -1008,6 +1381,7 @@ function App() {
               <li><a onClick={() => handleTabClick('about')}>About Us</a></li>
               <li><a onClick={() => handleTabClick('doctors')}>Specialist Doctors</a></li>
               <li><a onClick={() => handleTabClick('services')}>Departments</a></li>
+              <li><a onClick={() => handleTabClick('blogs')}>Blogs & Health Insights</a></li>
             </ul>
           </div>
 
