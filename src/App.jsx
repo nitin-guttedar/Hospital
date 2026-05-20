@@ -7,16 +7,16 @@ import {
 import './App.css';
 
 // Dynamically resolve static image URLs in Vite
-const docAnandImg = new URL('./assets/Images/AnandDr.jpg', import.meta.url).href;
-const docRohiniImg = new URL('./assets/Images/DrRohini.jpg', import.meta.url).href;
+const docAnandImg = new URL('./assets/Images/AnandDr.JPG', import.meta.url).href;
+const docRohiniImg = new URL('./assets/Images/DrRohini.JPG', import.meta.url).href;
 const appLogoImg = new URL('./assets/Images/applogo.jpeg', import.meta.url).href;
 
 // Gallery Images list - All 20 files from assets
 const galleryFiles = [
-  "7A9A5432.jpg", "7A9A5443.jpg", "7A9A5449.jpg", "7A9A5461.jpg", "7A9A5477.jpg",
-  "7A9A5499.jpg", "7A9A5509.jpg", "7A9A5522.jpg", "7A9A5540.jpg", "7A9A5550.jpg",
-  "7A9A5558.jpg", "7A9A5562.jpg", "7A9A5595.jpg", "7A9A5624.jpg", "7A9A5630.jpg",
-  "7A9A5649.jpg", "7A9A5664.jpg", "7A9A5673.jpg", "7A9A5687.jpg", "7A9A5688.jpg"
+  "7A9A5432.jpg", "7A9A5443.JPG", "7A9A5449.JPG", "7A9A5461.JPG", "7A9A5477.JPG",
+  "7A9A5499.JPG", "7A9A5509.JPG", "7A9A5522.JPG", "7A9A5540.JPG", "7A9A5550.JPG",
+  "7A9A5558.JPG", "7A9A5562.JPG", "7A9A5595.JPG", "7A9A5624.JPG", "7A9A5630.JPG",
+  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG"
 ];
 
 // Map 20 images to clean filterable categories
