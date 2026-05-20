@@ -7,16 +7,16 @@ import {
 import './App.css';
 
 // Dynamically resolve static image URLs in Vite
-const docAnandImg = new URL('./assets/Images/AnandDr.JPG', import.meta.url).href;
-const docRohiniImg = new URL('./assets/Images/DrRohini.JPG', import.meta.url).href;
+const docAnandImg = new URL('./assets/Images/AnandDr.jpg', import.meta.url).href;
+const docRohiniImg = new URL('./assets/Images/DrRohini.jpg', import.meta.url).href;
 const appLogoImg = new URL('./assets/Images/applogo.jpeg', import.meta.url).href;
 
 // Gallery Images list - All 20 files from assets
 const galleryFiles = [
-  "7A9A5432.JPG", "7A9A5443.JPG", "7A9A5449.JPG", "7A9A5461.JPG", "7A9A5477.JPG",
-  "7A9A5499.JPG", "7A9A5509.JPG", "7A9A5522.JPG", "7A9A5540.JPG", "7A9A5550.JPG",
-  "7A9A5558.JPG", "7A9A5562.JPG", "7A9A5595.JPG", "7A9A5624.JPG", "7A9A5630.JPG",
-  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG"
+  "7A9A5432.jpg", "7A9A5443.jpg", "7A9A5449.jpg", "7A9A5461.jpg", "7A9A5477.jpg",
+  "7A9A5499.jpg", "7A9A5509.jpg", "7A9A5522.jpg", "7A9A5540.jpg", "7A9A5550.jpg",
+  "7A9A5558.jpg", "7A9A5562.jpg", "7A9A5595.jpg", "7A9A5624.jpg", "7A9A5630.jpg",
+  "7A9A5649.jpg", "7A9A5664.jpg", "7A9A5673.jpg", "7A9A5687.jpg", "7A9A5688.jpg"
 ];
 
 // Map 20 images to clean filterable categories
@@ -344,7 +344,7 @@ function App() {
                     </li>
                     <li>
                       <Check size={18} />
-                      <span>Empanelled under **Ayushman Bharat PM-JAY** & Cashless Insurance schemes.</span>
+                      <span>Empanelled under Ayushman Bharat PM-JAY & Cashless Insurance schemes.</span>
                     </li>
                     <li>
                       <Check size={18} />
@@ -385,7 +385,7 @@ function App() {
                     Our hospital brings together specialist care in Pediatrics, Obstetrics & Gynaecology and General Medicine, supported by experienced nursing staff and dedicated support teams. With a strong focus on patient safety, hygiene and personalised attention, we strive to make every patient feel heard, respected and well cared for.
                   </p>
                   <p className="about-desc">
-                    We are proud to be empanelled under major government schemes like **Ayushman Bharat PM-JAY** as well as a wide range of company and private health insurance plans, making quality healthcare more affordable and accessible for the people of Athani and surrounding areas.
+                    We are proud to be empanelled under major government schemes like Ayushman Bharat PM-JAY as well as a wide range of company and private health insurance plans, making quality healthcare more affordable and accessible for the people of Athani and surrounding areas.
                   </p>
                 </div>
 
@@ -605,27 +605,27 @@ function App() {
                   </p>
                   
                   <div className="appointment-method">
-                    <div className="method-item">
+                    <a href="tel:8197270975" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                       <div className="method-icon"><Phone size={16} /></div>
                       <div className="method-details">
                         <h4>Call Reception</h4>
                         <p><strong>8197270975</strong> (OPD timings)</p>
                       </div>
-                    </div>
-                    <div className="method-item">
+                    </a>
+                    <a href="tel:9482384887" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                       <div className="method-icon"><Phone size={16} /></div>
                       <div className="method-details">
                         <h4>OPD Counter Desk</h4>
                         <p><strong>9482384887</strong> (For walk-ins and tokens)</p>
                       </div>
-                    </div>
-                    <div className="method-item">
+                    </a>
+                    <a href="https://wa.me/918197270975?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                       <div className="method-icon"><CheckCircle size={16} /></div>
                       <div className="method-details">
                         <h4>WhatsApp Booking</h4>
                         <p>Send details (Name, Age, Doctor) to <strong>8197270975</strong></p>
                       </div>
-                    </div>
+                    </a>
                   </div>
 
                   <div className="appointment-notice">
@@ -788,7 +788,7 @@ function App() {
                   <div className="insurance-intro-desc">
                     <h3>Ayushman Bharat & Cashless Hospital Support</h3>
                     <p>
-                      Gunjigavi Multispeciality Hospital Athani supports patients by accepting a wide range of company health insurance plans and major government health schemes such as **Ayushman Bharat PM-JAY**, enabling eligible patients to avail cashless or reimbursement facilities as per policy terms.
+                      Gunjigavi Multispeciality Hospital Athani supports patients by accepting a wide range of company health insurance plans and major government health schemes such as Ayushman Bharat PM-JAY, enabling eligible patients to avail cashless or reimbursement facilities as per policy terms.
                     </p>
                     <p>
                       We strive to ensure that finance never stands in the way of premium treatment, offering step-by-step paperwork support directly from our admissions counter.
