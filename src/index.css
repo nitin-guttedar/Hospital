@@ -1390,12 +1390,31 @@ body {
 /* INSURANCE & SCHEMES */
 .insurance-banner {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 100%;
+  /* height: 380px; */
+  object-fit: fill;
   border-radius: 12px;
   margin-bottom: 30px;
   display: block;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  animation: fadeInScale 0.8s ease-out;
+}
+
+.insurance-banner:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .insurance-card {
@@ -1994,7 +2013,7 @@ body {
   }
 
   .insurance-banner {
-    height: 220px;
+    height: 300px;
   }
   
   .gallery-grid {
@@ -2189,7 +2208,8 @@ body {
   }
 
   .insurance-banner {
-    height: 180px;
+    height: 220px;
+    margin-bottom: 25px;
   }
 
   .doctors-grid,

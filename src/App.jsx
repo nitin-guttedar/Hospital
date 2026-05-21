@@ -12,12 +12,15 @@ const docAnandImg = new URL('./assets/Images/AnandDr.JPG', import.meta.url).href
 const docRohiniImg = new URL('./assets/Images/DrRohini.JPG', import.meta.url).href;
 const appLogoImg = new URL('./assets/Images/applogo.jpeg', import.meta.url).href;
 
-// Blog Images
+// Blog Cover Images
+const pediatricsBlogImg = new URL('./assets/BlogsImages/Pediatrics.png', import.meta.url).href;
+const gynaecologyBlogImg = new URL('./assets/BlogsImages/Gynaecology.png', import.meta.url).href;
+const generalMedicineBlogImg = new URL('./assets/BlogsImages/GeneralMedicine.png', import.meta.url).href;
 
 
 // Insurance Banner Images
-// const govtSchemeBannerImg = new URL('./assets/InsuranceImages/GovtScheme.PNG', import.meta.url).href;
-// const insuranceBannerImg = new URL('./assets/InsuranceImages/Insurance.PNG', import.meta.url).href;
+const govtSchemeBannerImg = new URL('./assets/InsuranceImages/GovtScheme.PNG', import.meta.url).href;
+const insuranceBannerImg = new URL('./assets/InsuranceImages/Insurance.jpeg', import.meta.url).href;
 
 // Gallery Images list - All 20 files from assets
 const galleryFiles = [
@@ -972,11 +975,11 @@ function App() {
               
               {/* GOVERNMENT SCHEMES */}
               <div style={{ marginBottom: '50px' }}>
-                {/* <img src={govtSchemeBannerImg} alt="Government Health Schemes" className="insurance-banner" /> */}
                 <h3 className="services-section-heading">
                   <Shield size={24} style={{ color: 'var(--primary)' }} />
                   Government Health Schemes
                 </h3>
+                <img src={govtSchemeBannerImg} alt="Government Health Schemes" className="insurance-banner" />
                 <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
                   For selected departments - Empanelled under multiple government schemes
                 </p>
@@ -1051,11 +1054,11 @@ function App() {
 
               {/* PRIVATE HEALTH INSURANCE */}
               <div style={{ marginBottom: '50px' }}>
-                {/* <img src={insuranceBannerImg} alt="Private Health Insurance Accepted" className="insurance-banner" /> */}
                 <h3 className="services-section-heading">
                   <Heart size={24} style={{ color: 'var(--accent)' }} />
                   Private Health Insurance Accepted
                 </h3>
+                <img src={insuranceBannerImg} alt="Private Health Insurance Accepted" className="insurance-banner" />
                 <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
                   For selected departments - We accept all major health insurance companies
                 </p>
@@ -1184,9 +1187,9 @@ function App() {
               <div className="blogs-grid">
                 {/* Blog 1: Pediatrician */}
                 <div className="blog-card">
+                  <img src={pediatricsBlogImg} alt="Pediatrician - Child Health Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <img src={pediatricianImg} alt="Pediatrician - Child Health Specialist" className="blog-image" /> */}
-                    <div className="blog-icon"><Heart size={32} /></div>
+                    {/* <div className="blog-icon"><Heart size={32} /></div> */}
                     <h3 className="blog-title">Consultant Pediatrician – Complete Child Health</h3>
                     <p className="blog-category">Child Health & Development</p>
                   </div>
@@ -1215,9 +1218,9 @@ function App() {
 
                 {/* Blog 2: OB-GYN */}
                 <div className="blog-card">
+                  <img src={gynaecologyBlogImg} alt="Gynecologist - Women's Health Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <img src={gynecologistImg} alt="Gynecologist - Women's Health Specialist" className="blog-image" /> */}
-                    <div className="blog-icon"><Activity size={32} /></div>
+                    {/* <div className="blog-icon"><Activity size={32} /></div> */}
                     <h3 className="blog-title">Consultant Obstetrician & Gynaecologist – Women's Health</h3>
                     <p className="blog-category">Women's Health & Safe Motherhood</p>
                   </div>
@@ -1246,9 +1249,9 @@ function App() {
 
                 {/* Blog 3: General Physician */}
                 <div className="blog-card">
+                  <img src={generalMedicineBlogImg} alt="Physician - General Medicine Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <img src={physicianImg} alt="Physician - General Medicine Specialist" className="blog-image" /> */}
-                    <div className="blog-icon"><Shield size={32} /></div>
+                    {/* <div className="blog-icon"><Shield size={32} /></div> */}
                     <h3 className="blog-title">Consultant Physician (General Medicine) – Adult Health</h3>
                     <p className="blog-category">Adult Medicine & Chronic Disease Management</p>
                   </div>
