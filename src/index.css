@@ -228,6 +228,86 @@ body {
   background: rgba(20, 184, 166, 0.15);
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: var(--transition);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(4px);
+  pointer-events: auto;
+}
+
+.dropdown-menu li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  border: none;
+  background: transparent;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding-left: 24px;
+}
+
+[data-theme="dark"] .dropdown-menu li a:hover {
+  background: rgba(20, 184, 166, 0.15);
+  color: var(--primary-hover);
+}
+
+.dropdown-menu li:first-child a {
+  border-radius: 6px 6px 0 0;
+}
+
+.dropdown-menu li:last-child a {
+  border-radius: 0 0 6px 6px;
+}
+
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -1308,6 +1388,16 @@ body {
 }
 
 /* INSURANCE & SCHEMES */
+.insurance-banner {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+
 .insurance-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -1902,6 +1992,10 @@ body {
   .services-section-heading {
     font-size: 22px;
   }
+
+  .insurance-banner {
+    height: 220px;
+  }
   
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -2003,6 +2097,38 @@ body {
     width: 100%;
   }
 
+  /* Mobile Dropdown - Show inline */
+  .nav-dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: block;
+    background: var(--primary-light);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    min-width: auto;
+    pointer-events: auto;
+  }
+
+  .dropdown-menu li a {
+    padding: 12px 15px 12px 30px;
+    font-size: 14px;
+    border-radius: 0;
+  }
+
+  .dropdown-menu li a:hover {
+    padding-left: 34px;
+  }
+
   .mobile-menu-btn {
     display: flex;
     z-index: 101;
@@ -2060,6 +2186,10 @@ body {
 
   .scheme-title {
     font-size: 16px;
+  }
+
+  .insurance-banner {
+    height: 180px;
   }
 
   .doctors-grid,
@@ -2147,6 +2277,15 @@ body {
 
 [data-theme="dark"] .blog-header {
   background: linear-gradient(135deg, rgba(13, 148, 136, 0.15) 0%, rgba(13, 148, 136, 0.05) 100%);
+}
+
+.blog-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .blog-icon {
@@ -2320,6 +2459,10 @@ body {
   .blog-section-title {
     font-size: 28px;
   }
+
+  .blog-image {
+    height: 240px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2345,5 +2488,9 @@ body {
 
   .blog-why-choose-section {
     padding: 30px 20px;
+  }
+
+  .blog-image {
+    height: 200px;
   }
 }
