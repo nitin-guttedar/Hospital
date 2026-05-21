@@ -1580,7 +1580,7 @@ function App() {
 
         <div className="container footer-bottom">
           <span>&copy; {new Date().getFullYear()} Gunjigavi Multispeciality Hospital, Athani. All rights reserved.</span>
-          <span>Designed By DAMA DIGITAL ANALYTICS.</span>
+          <span>Designed By  <a href="https://www.damadigitalanalytics.com/" target="_blank" rel="noopener noreferrer" style={{color:'white'}}>DAMA Digital Analytics</a></span>
         </div>
 
         {/* SEO copy paragraph footer requirement */}
