@@ -29,7 +29,7 @@ const galleryFiles = [
 
 // Manual category mapping for each image - Customize each image's category here
 const imageCategoryMap = {
-  "7A9A5432.jpg": "building",
+  "7A9A5432.jpg": "reception",
   "7A9A5443.JPG": "building",
   "7A9A5449.JPG": "consultation",
   "7A9A5461.JPG": "consultation",
