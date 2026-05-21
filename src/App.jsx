@@ -27,17 +27,42 @@ const galleryFiles = [
   "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG"
 ];
 
-// Map 20 images to clean filterable categories
+// Manual category mapping for each image - Customize each image's category here
+const imageCategoryMap = {
+  "7A9A5432.jpg": "building",
+  "7A9A5443.JPG": "building",
+  "7A9A5449.JPG": "building",
+  "7A9A5461.JPG": "building",
+  "7A9A5477.JPG": "reception",
+  "7A9A5499.JPG": "reception",
+  "7A9A5509.JPG": "reception",
+  "7A9A5522.JPG": "reception",
+  "7A9A5540.JPG": "consultation",
+  "7A9A5550.JPG": "consultation",
+  "7A9A5558.JPG": "consultation",
+  "7A9A5562.JPG": "consultation",
+  "7A9A5595.JPG": "pediatric",
+  "7A9A5624.JPG": "pediatric",
+  "7A9A5630.JPG": "pediatric",
+  "7A9A5649.JPG": "pediatric",
+  "7A9A5664.JPG": "maternity",
+  "7A9A5673.JPG": "maternity",
+  "7A9A5687.JPG": "maternity",
+  "7A9A5688.JPG": "maternity"
+};
+
+// Category display names
+const categoryNames = {
+  building: "Building & Entrance",
+  reception: "Reception & Waiting Area",
+  consultation: "Consultation Rooms",
+  pediatric: "Pediatric Care Area",
+  maternity: "Maternity & Women's Care"
+};
+
+// Map 20 images to clean filterable categories using the category map
 const galleryImages = galleryFiles.map((filename, index) => {
-  const categories = ["building", "reception", "consultation", "pediatric", "maternity"];
-  const categoryNames = {
-    building: "Building & Entrance",
-    reception: "Reception & Waiting Area",
-    consultation: "Consultation Rooms",
-    pediatric: "Pediatric Care Area",
-    maternity: "Maternity & Women's Care"
-  };
-  const category = categories[index % categories.length];
+  const category = imageCategoryMap[filename];
   return {
     id: index + 1,
     name: filename,
