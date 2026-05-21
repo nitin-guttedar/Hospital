@@ -31,6 +31,7 @@ const galleryFiles = [
 const imageCategoryMap = {
   "7A9A5432.jpg": "reception",
   "7A9A5443.JPG": "building",
+    "7A9A5443.JPG": "reception",
   "7A9A5449.JPG": "consultation",
   "7A9A5461.JPG": "consultation",
   "7A9A5477.JPG": "reception",
