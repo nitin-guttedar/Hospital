@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import emailjs from '@emailjs/browser';
 import { 
   Phone, Mail, Clock, MapPin, Calendar, Check, ChevronRight, ChevronLeft, 
   Sun, Moon, Menu, X, Shield, Image, Heart, Info, ExternalLink, User, Trash2, 
   Compass, Activity, AlertCircle, PlusCircle, CheckCircle, Search, HelpCircle
 } from 'lucide-react';
 import './App.css';
+
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = 'service_eq0nugp';
+const EMAILJS_PUBLIC_KEY = 'g0CrnHUhH0pFdQefk';
+const EMAILJS_TEMPLATE_ID = 'template_vq3jlmf'; // Make sure this template exists in EmailJS
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 // Dynamically resolve static image URLs in Vite
 const docAnandImg = new URL('./assets/Images/AnandDr.JPG', import.meta.url).href;
@@ -176,6 +185,9 @@ function App() {
   });
   const [toastMessage, setToastMessage] = useState(null);
   const [savedBookings, setSavedBookings] = useState([]);
+  
+  // Blog detail page state
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   // Sync theme attribute with document element
   useEffect(() => {
@@ -226,6 +238,20 @@ function App() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Navigate to blog detail page
+  const handleBlogClick = (blogId) => {
+    setSelectedBlog(blogId);
+    setActiveTab('blog-detail');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Go back from blog detail
+  const handleBackFromBlog = () => {
+    setActiveTab('blogs');
+    setSelectedBlog(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.doctor || !formData.date || !formData.timeSlot) {
@@ -244,8 +270,29 @@ function App() {
     setSavedBookings(updatedBookings);
     localStorage.setItem('gunjigavi_appointments', JSON.stringify(updatedBookings));
     
-    // Show success notification
-    setToastMessage(`Success! Appointment requested with ${formData.doctor}. Our team will call you back.`);
+    // Send email via EmailJS
+    const emailParams = {
+      to_email: 'hospitalgunjigavi@gmail.com',
+      patient_name: formData.name,
+      patient_phone: formData.phone,
+      patient_email: formData.email || 'Not provided',
+      doctor_name: formData.doctor,
+      appointment_date: formData.date,
+      appointment_time: formData.timeSlot,
+      message: formData.message || 'No additional message',
+      booking_time: new Date().toLocaleString()
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailParams)
+      .then((response) => {
+        console.log('Email sent successfully!', response);
+        setToastMessage(`Success! Appointment requested with ${formData.doctor}. Confirmation email sent.`);
+      })
+      .catch((error) => {
+        console.log('Email sending failed (but booking saved):', error);
+        setToastMessage(`Success! Appointment requested. Email notification may be delayed.`);
+      });
+
     setTimeout(() => {
       setToastMessage(null);
     }, 5000);
@@ -1186,10 +1233,9 @@ function App() {
               
               <div className="blogs-grid">
                 {/* Blog 1: Pediatrician */}
-                <div className="blog-card">
+                <div className="blog-card" onClick={() => handleBlogClick('pediatrics')}>
                   <img src={pediatricsBlogImg} alt="Pediatrician - Child Health Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <div className="blog-icon"><Heart size={32} /></div> */}
                     <h3 className="blog-title">Consultant Pediatrician – Complete Child Health</h3>
                     <p className="blog-category">Child Health & Development</p>
                   </div>
@@ -1199,28 +1245,16 @@ function App() {
                       A Consultant Pediatrician specializes in the physical, emotional and developmental health of infants, children and adolescents. From newborn care to teenage health issues, our pediatrician is your child's primary medical partner.
                     </p>
                     
-                    <div className="blog-section">
-                      <h4>Our Pediatric Services Include:</h4>
-                      <ul className="blog-list">
-                        <li><Check size={16} /> <strong>Newborn & Infant Care</strong> – Monitoring feeding, weight gain, early development and safe parenting guidance</li>
-                        <li><Check size={16} /> <strong>Childhood Illness Management</strong> – Treatment for fever, cough, infections, allergies and asthma</li>
-                        <li><Check size={16} /> <strong>Growth & Development Tracking</strong> – Regular monitoring of milestones and early identification of delays</li>
-                        <li><Check size={16} /> <strong>Vaccination & Immunisation</strong> – Planned vaccinations with counselling on benefits and post-vaccination care</li>
-                        <li><Check size={16} /> <strong>Long-term Chronic Care</strong> – Ongoing management for asthma, allergies and nutrition guidance</li>
-                      </ul>
-                    </div>
-                    
-                    <p className="blog-highlight">
-                      <strong>Why This Matters:</strong> When searching for a child specialist doctor in Athani, families want someone clinically strong, approachable and child-friendly. Our pediatric services focus on building trust with both children and parents through clear communication and gentle care.
-                    </p>
+                    <button className="read-more-btn">
+                      Read More →
+                    </button>
                   </div>
                 </div>
 
                 {/* Blog 2: OB-GYN */}
-                <div className="blog-card">
+                <div className="blog-card" onClick={() => handleBlogClick('gynecology')}>
                   <img src={gynaecologyBlogImg} alt="Gynecologist - Women's Health Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <div className="blog-icon"><Activity size={32} /></div> */}
                     <h3 className="blog-title">Consultant Obstetrician & Gynaecologist – Women's Health</h3>
                     <p className="blog-category">Women's Health & Safe Motherhood</p>
                   </div>
@@ -1230,28 +1264,16 @@ function App() {
                       An Obstetrician & Gynaecologist (OB-GYN) specializes in pregnancy, childbirth and the female reproductive system. Obstetrics focuses on pregnancy and delivery, while gynaecology addresses women's reproductive health across all life stages.
                     </p>
                     
-                    <div className="blog-section">
-                      <h4>Our Obstetric & Gynaecology Services Include:</h4>
-                      <ul className="blog-list">
-                        <li><Check size={16} /> <strong>Pre-conception Counselling</strong> – Health check-ups and guidance for couples planning pregnancy</li>
-                        <li><Check size={16} /> <strong>Antenatal Care</strong> – Regular pregnancy check-ups, monitoring of mother and baby, high-risk pregnancy management</li>
-                        <li><Check size={16} /> <strong>Delivery & Childbirth</strong> – Normal delivery, assisted delivery and caesarean care with continuous monitoring</li>
-                        <li><Check size={16} /> <strong>Postnatal Support</strong> – Post-delivery care, breastfeeding guidance and emotional support</li>
-                        <li><Check size={16} /> <strong>Gynaecology Services</strong> – Treatment for menstrual disorders, PCOS, fibroids, infections and menopausal symptoms</li>
-                      </ul>
-                    </div>
-                    
-                    <p className="blog-highlight">
-                      <strong>Why This Matters:</strong> Women seeking a lady doctor for pregnancy in Athani want someone who understands their concerns, respects their privacy and explains every step clearly. Our specialist provides calm, respectful and confidential care.
-                    </p>
+                    <button className="read-more-btn">
+                      Read More →
+                    </button>
                   </div>
                 </div>
 
                 {/* Blog 3: General Physician */}
-                <div className="blog-card">
+                <div className="blog-card" onClick={() => handleBlogClick('generalmedicine')}>
                   <img src={generalMedicineBlogImg} alt="Physician - General Medicine Specialist" className="blog-cover-image" />
                   <div className="blog-header">
-                    {/* <div className="blog-icon"><Shield size={32} /></div> */}
                     <h3 className="blog-title">Consultant Physician (General Medicine) – Adult Health</h3>
                     <p className="blog-category">Adult Medicine & Chronic Disease Management</p>
                   </div>
@@ -1261,20 +1283,9 @@ function App() {
                       A Consultant Physician in General Medicine is trained to diagnose and treat a wide range of medical problems in adults, from acute infections to complex long-term conditions, often acting as the central coordinator of care for patients with multiple health issues.
                     </p>
                     
-                    <div className="blog-section">
-                      <h4>Our General Medicine Services Include:</h4>
-                      <ul className="blog-list">
-                        <li><Check size={16} /> <strong>Acute Medical Assessment</strong> – Detailed evaluation for fever, infections, chest pain, breathlessness and unexplained symptoms</li>
-                        <li><Check size={16} /> <strong>Chronic Disease Management</strong> – Diagnosis and long-term care for diabetes, hypertension, thyroid disorders and lipid problems</li>
-                        <li><Check size={16} /> <strong>Lifestyle & Prevention</strong> – Counselling on diet, exercise, weight management and smoking cessation</li>
-                        <li><Check size={16} /> <strong>Preventive Health Check-ups</strong> – Full body check-ups for people with family history of heart disease or chronic illness</li>
-                        <li><Check size={16} /> <strong>Long-term Follow-up</strong> – Individualized care plans and coordination of investigations for multiple conditions</li>
-                      </ul>
-                    </div>
-                    
-                    <p className="blog-highlight">
-                      <strong>Why This Matters:</strong> When searching for a general physician in Athani, patients want a doctor who listens carefully, investigates thoroughly and gives practical advice for daily life. Our services provide clear diagnosis and realistic treatment plans.
-                    </p>
+                    <button className="read-more-btn">
+                      Read More →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1407,6 +1418,105 @@ function App() {
                   ></iframe>
                 </div>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* 8. BLOG DETAIL PAGE */}
+        {activeTab === 'blog-detail' && selectedBlog && (
+          <section className="section animate-fade-up">
+            <div className="container">
+              {/* Back Button */}
+              <button className="blog-back-btn" onClick={handleBackFromBlog}>
+                <ChevronLeft size={20} /> Back to Blogs
+              </button>
+
+              {selectedBlog === 'pediatrics' && (
+                <div className="blog-detail-container">
+                  <img src={pediatricsBlogImg} alt="Pediatrician Blog" className="blog-detail-image" />
+                  <div className="blog-detail-content">
+                    <h1 className="blog-detail-title">Consultant Pediatrician – Complete Child Health</h1>
+                    <p className="blog-detail-category">Child Health & Development</p>
+                    
+                    <p className="blog-detail-intro">
+                      A Consultant Pediatrician specializes in the physical, emotional and developmental health of infants, children and adolescents. From newborn care to teenage health issues, our pediatrician is your child's primary medical partner.
+                    </p>
+                    
+                    <div className="blog-detail-section">
+                      <h2>Our Pediatric Services Include:</h2>
+                      <ul className="blog-detail-list">
+                        <li><Check size={20} /> <strong>Newborn & Infant Care</strong> – Monitoring feeding, weight gain, early development and safe parenting guidance</li>
+                        <li><Check size={20} /> <strong>Childhood Illness Management</strong> – Treatment for fever, cough, infections, allergies and asthma</li>
+                        <li><Check size={20} /> <strong>Growth & Development Tracking</strong> – Regular monitoring of milestones and early identification of delays</li>
+                        <li><Check size={20} /> <strong>Vaccination & Immunisation</strong> – Planned vaccinations with counselling on benefits and post-vaccination care</li>
+                        <li><Check size={20} /> <strong>Long-term Chronic Care</strong> – Ongoing management for asthma, allergies and nutrition guidance</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="blog-detail-highlight">
+                      <strong>Why This Matters:</strong> When searching for a child specialist doctor in Athani, families want someone clinically strong, approachable and child-friendly. Our pediatric services focus on building trust with both children and parents through clear communication and gentle care.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedBlog === 'gynecology' && (
+                <div className="blog-detail-container">
+                  <img src={gynaecologyBlogImg} alt="Gynecology Blog" className="blog-detail-image" />
+                  <div className="blog-detail-content">
+                    <h1 className="blog-detail-title">Consultant Obstetrician & Gynaecologist – Women's Health</h1>
+                    <p className="blog-detail-category">Women's Health & Safe Motherhood</p>
+                    
+                    <p className="blog-detail-intro">
+                      An Obstetrician & Gynaecologist (OB-GYN) specializes in pregnancy, childbirth and the female reproductive system. Obstetrics focuses on pregnancy and delivery, while gynaecology addresses women's reproductive health across all life stages.
+                    </p>
+                    
+                    <div className="blog-detail-section">
+                      <h2>Our Obstetric & Gynaecology Services Include:</h2>
+                      <ul className="blog-detail-list">
+                        <li><Check size={20} /> <strong>Pre-conception Counselling</strong> – Health check-ups and guidance for couples planning pregnancy</li>
+                        <li><Check size={20} /> <strong>Antenatal Care</strong> – Regular pregnancy check-ups, monitoring of mother and baby, high-risk pregnancy management</li>
+                        <li><Check size={20} /> <strong>Delivery & Childbirth</strong> – Normal delivery, assisted delivery and caesarean care with continuous monitoring</li>
+                        <li><Check size={20} /> <strong>Postnatal Support</strong> – Post-delivery care, breastfeeding guidance and emotional support</li>
+                        <li><Check size={20} /> <strong>Gynaecology Services</strong> – Treatment for menstrual disorders, PCOS, fibroids, infections and menopausal symptoms</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="blog-detail-highlight">
+                      <strong>Why This Matters:</strong> Women seeking a lady doctor for pregnancy in Athani want someone who understands their concerns, respects their privacy and explains every step clearly. Our specialist provides calm, respectful and confidential care.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedBlog === 'generalmedicine' && (
+                <div className="blog-detail-container">
+                  <img src={generalMedicineBlogImg} alt="General Medicine Blog" className="blog-detail-image" />
+                  <div className="blog-detail-content">
+                    <h1 className="blog-detail-title">Consultant Physician (General Medicine) – Adult Health</h1>
+                    <p className="blog-detail-category">Adult Medicine & Chronic Disease Management</p>
+                    
+                    <p className="blog-detail-intro">
+                      A Consultant Physician in General Medicine is trained to diagnose and treat a wide range of medical problems in adults, from acute infections to complex long-term conditions, often acting as the central coordinator of care for patients with multiple health issues.
+                    </p>
+                    
+                    <div className="blog-detail-section">
+                      <h2>Our General Medicine Services Include:</h2>
+                      <ul className="blog-detail-list">
+                        <li><Check size={20} /> <strong>Acute Medical Assessment</strong> – Detailed evaluation for fever, infections, chest pain, breathlessness and unexplained symptoms</li>
+                        <li><Check size={20} /> <strong>Chronic Disease Management</strong> – Diagnosis and long-term care for diabetes, hypertension, thyroid disorders and lipid problems</li>
+                        <li><Check size={20} /> <strong>Lifestyle & Prevention</strong> – Counselling on diet, exercise, weight management and smoking cessation</li>
+                        <li><Check size={20} /> <strong>Preventive Health Check-ups</strong> – Full body check-ups for people with family history of heart disease or chronic illness</li>
+                        <li><Check size={20} /> <strong>Long-term Follow-up</strong> – Individualized care plans and coordination of investigations for multiple conditions</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="blog-detail-highlight">
+                      <strong>Why This Matters:</strong> When searching for a general physician in Athani, patients want a doctor who listens carefully, investigates thoroughly and gives practical advice for daily life. Our services provide clear diagnosis and realistic treatment plans.
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </section>
         )}
