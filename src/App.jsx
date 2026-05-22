@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { 
   Phone, Mail, Clock, MapPin, Calendar, Check, ChevronRight, ChevronLeft, 
   Sun, Moon, Menu, X, Shield, Image, Heart, Info, ExternalLink, User, Trash2, 
-  Compass, Activity, AlertCircle, PlusCircle, CheckCircle, Search, HelpCircle
+  Compass, Activity, AlertCircle, PlusCircle, CheckCircle, Search, HelpCircle, MessageCircle
 } from 'lucide-react';
 import './App.css';
 
@@ -460,6 +460,7 @@ function App() {
 
         {/* 1. HOME MODULE */}
         {activeTab === 'home' && (
+          <>
           <section className="hero-section animate-fade-up">
             <div className="container hero-grid">
               <div className="hero-content">
@@ -534,13 +535,308 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* WELCOME SECTION */}
+          <section className="section animate-fade-up">
+            <div className="container">
+              <h2 className="section-title">Welcome to Gunjigavi Multispeciality Hospital</h2>
+              <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+                <p className="section-text" style={{ fontSize: '16px', lineHeight: '1.8', marginBottom: '20px', color: 'var(--text-primary)' }}>
+                  At Gunjigavi Multispeciality Hospital Athani, we believe every patient deserves the best medical care delivered with warmth, honesty and respect. Our hospital is conveniently located near Shivaji Circle, Madabhavi Road, Deshpande Nagar, Athani – 591304, making us easily accessible to patients from Athani and surrounding villages in Belagavi district.
+                </p>
+                <p className="section-text" style={{ fontSize: '16px', lineHeight: '1.8', marginBottom: '20px', color: 'var(--text-primary)' }}>
+                  We are a full-service multispeciality hospital with dedicated departments for children, women and adults, along with visiting specialists in Dermatology, ENT and Infertility. Whether it is a routine check-up, a pregnancy concern, a childhood fever or a long-term health condition, our experienced team is here to guide and treat your family at every step.
+                </p>
+                <div style={{ padding: '20px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '15px', marginTop: '30px', borderLeft: '4px solid var(--primary)' }}>
+                  <p style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)' }}>
+                    Compassion · Care · Commitment
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 4 HIGHLIGHTS SECTION */}
+          <section className="section animate-fade-up" style={{ background: 'rgba(13, 148, 136, 0.05)' }}>
+            <div className="container">
+              <div className="highlights-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', marginTop: '40px' }}>
+                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>🏥</div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Multispeciality Hospital</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>3 core departments + 3 visiting specialties</p>
+                </div>
+
+                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>👨‍⚕️</div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Experienced Doctors</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>MD Pediatrics · DGO · MD General Medicine</p>
+                </div>
+
+                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>💳</div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Insurance & Schemes</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ayushman Bharat, KASS, Yashaswini & more</p>
+                </div>
+
+                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>📍</div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Central Location</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Near Shivaji Circle, Athani – 591304</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CORE SPECIALITIES EXPANDED SECTION */}
+          <section className="section animate-fade-up">
+            <div className="container">
+              <h2 className="section-title">Our Specialities</h2>
+              <div className="specialities-expanded" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginTop: '50px' }}>
+                
+                {/* Pediatrics Card */}
+                <div style={{ background: 'rgba(13, 148, 136, 0.08)', borderRadius: '15px', padding: '30px', borderLeft: '5px solid var(--primary)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                    <div style={{ width: '50px', height: '50px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Heart size={24} color="white" />
+                    </div>
+                    <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--primary)' }}>Pediatrics</h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '15px', lineHeight: '1.6' }}>
+                    <strong>Child Health & Vaccinations</strong><br/>
+                    Complete care for newborns, infants and children including vaccinations, growth monitoring, childhood illness management and developmental assessment.
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-primary)', marginBottom: '10px' }}>
+                    <strong>Consultant:</strong> Dr. Anand Gunjigavi — M.B.B.S, M.D. (Ped & Neonatologist)
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600' }}>
+                    ⏰ Morning: 10:00 AM – 4:00 PM | Evening: 7:00 PM – 9:00 PM
+                  </p>
+                </div>
+
+                {/* Gynecology Card */}
+                <div style={{ background: 'rgba(217, 119, 6, 0.08)', borderRadius: '15px', padding: '30px', borderLeft: '5px solid var(--accent)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                    <div style={{ width: '50px', height: '50px', background: 'var(--accent)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Activity size={24} color="white" />
+                    </div>
+                    <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--accent)' }}>Gynecology</h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '15px', lineHeight: '1.6' }}>
+                    <strong>Women's Health</strong><br/>
+                    Antenatal care, high-risk pregnancy, normal delivery, PCOS, fibroids, menstrual disorders and postnatal support for women at all life stages.
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-primary)', marginBottom: '10px' }}>
+                    <strong>Consultant:</strong> Dr. Rohini Gunjigavi — M.B.B.S, D.G.O
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--primary)', fontWeight: '600' }}>
+                    ⏰ Morning: 10:00 AM – 4:00 PM
+                  </p>
+                </div>
+
+                {/* General Medicine Card */}
+                <div style={{ background: 'rgba(59, 130, 246, 0.08)', borderRadius: '15px', padding: '30px', borderLeft: '5px solid #3B82F6' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                    <div style={{ width: '50px', height: '50px', background: '#3B82F6', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Shield size={24} color="white" />
+                    </div>
+                    <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#3B82F6' }}>General Medicine</h3>
+                  </div>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '15px', lineHeight: '1.6' }}>
+                    <strong>Adult & Chronic Disease Care</strong><br/>
+                    Diagnosis and long-term management of diabetes, hypertension, thyroid, fevers, infections, chest complaints and lifestyle diseases.
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-primary)', marginBottom: '10px' }}>
+                    <strong>Consultant:</strong> Dr. Sai Shruthi S. Gunjigavi — M.B.B.S, M.D. (General Medicine)
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600' }}>
+                    ⏰ Morning: 10:00 AM – 4:00 PM | Evening: 7:00 PM – 9:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* VISITING SPECIALISTS SECTION */}
+          <section className="section animate-fade-up" style={{ background: 'rgba(13, 148, 136, 0.05)' }}>
+            <div className="container">
+              <h2 className="section-title">Visiting Specialist Clinics</h2>
+              <p className="section-subtitle">Expert consultations on selected days</p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', marginTop: '40px' }}>
+                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>🩺</div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Dermatology</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Skin, Hair & Nail problems</p>
+                </div>
+                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>👂</div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>ENT</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ear, Nose & Throat care</p>
+                </div>
+                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>👶</div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Infertility Specialist</h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Fertility evaluation & counselling</p>
+                </div>
+              </div>
+              
+              {/* <div style={{ marginTop: '30px', padding: '20px', background: 'rgba(217, 119, 6, 0.1)', borderRadius: '10px', textAlign: 'center', borderLeft: '4px solid var(--accent)' }}>
+                <p style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: '600' }}>
+                  📞 Please call or WhatsApp us to confirm visiting days and appointment availability.
+                </p>
+              </div> */}
+            </div>
+          </section>
+
+          {/* WHY CHOOSE US SECTION */}
+          <section className="section animate-fade-up">
+            <div className="container">
+              <h2 className="section-title">Why Families in Athani Trust Gunjigavi Hospital</h2>
+              
+              <div className="why-choose-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px', marginTop: '40px' }}>
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> One Stop for Whole Family
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Kids, women and adults all treated under one roof without going to different hospitals.</p>
+                </div>
+
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> Qualified Specialists
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>MD Pediatrics, DGO and MD General Medicine with strong clinical experience.</p>
+                </div>
+
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> Government Schemes
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Eligible patients can access Ayushman Bharat and other scheme benefits with our help desk support.</p>
+                </div>
+
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> Patient-First Approach
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Simple explanations, counselling in Kannada/English and enough time given to every patient.</p>
+                </div>
+
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> Clean & Hygienic
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Well-maintained facilities and infection-safe environment for your safety.</p>
+                </div>
+
+                <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                  <h4 style={{ fontSize: '17px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Check size={20} /> Centrally Located
+                  </h4>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Near Shivaji Circle, easy to reach from all parts of Athani and nearby villages.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* APPOINTMENT CTA SECTION */}
+          <section className="section animate-fade-up" style={{ background: 'rgba(13, 148, 136, 0.08)' }}>
+            <div className="container" style={{ maxWidth: '700px', textAlign: 'center' }}>
+              <h2 className="section-title">Book Your Appointment Today</h2>
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '30px' }}>
+                Getting an appointment at Gunjigavi Multispeciality Hospital Athani is quick and simple. Choose your preferred doctor, pick a time slot and leave the rest to us.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
+                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <Phone size={18} style={{ color: 'var(--primary)' }} />
+                  <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Call us: <a href="tel:8197270975" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
+                </div>
+                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <MessageCircle size={18} style={{ color: 'var(--primary)' }} />
+                  <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> WhatsApp: <a href="https://wa.me/918197270975" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
+                </div>
+                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                  <MapPin size={18} style={{ color: 'var(--primary)' }} />
+                  <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Walk in: Near Shivaji Circle, Athani</span>
+                </div>
+              </div>
+
+              <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ width: '100%', justifyContent: 'center', padding: '15px 30px' }}>
+                <Calendar size={20} /> Fill Appointment Form Online
+              </button>
+              <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: '15px' }}>
+                *(You can also fill in the appointment form and our team will call you back to confirm your slot.)*
+              </p>
+            </div>
+          </section>
+
+          {/* TESTIMONIALS SECTION */}
+          <section className="section animate-fade-up">
+            <div className="container">
+              <h2 className="section-title">What Our Patients Say</h2>
+              
+              <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
+                
+                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                  <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '14px', fontStyle: 'italic', color: 'var(--text-primary)', lineHeight: '1.8', marginBottom: '15px' }}>
+                    "Dr. Anand treated my son with great care and patience. The staff is very helpful and the clinic is always clean. We always come here for our children."
+                  </p>
+                  <p style={{ fontSize: '13px', fontWeight: '700', color: 'var(--primary)' }}>— Patient from Athani</p>
+                </div>
+
+                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                  <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '14px', fontStyle: 'italic', color: 'var(--text-primary)', lineHeight: '1.8', marginBottom: '15px' }}>
+                    "Dr. Rohini is an excellent doctor. She explained everything clearly during my pregnancy and I had a safe delivery. Highly recommend Gunjigavi Hospital."
+                  </p>
+                  <p style={{ fontSize: '13px', fontWeight: '700', color: 'var(--primary)' }}>— Patient from Chikodi Road, Athani</p>
+                </div>
+
+                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                  <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '14px', fontStyle: 'italic', color: 'var(--text-primary)', lineHeight: '1.8', marginBottom: '15px' }}>
+                    "Dr. Sai Shruthi is very thorough. She diagnosed my diabetes properly and gave me a clear plan. Very professional and caring hospital."
+                  </p>
+                  <p style={{ fontSize: '13px', fontWeight: '700', color: 'var(--primary)' }}>— Patient from Belagavi district</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* BOTTOM CTA SECTION */}
+          <section className="section animate-fade-up" style={{ background: 'linear-gradient(135deg, var(--primary) 0%, rgba(13, 148, 136, 0.8) 100%)' }}>
+            <div className="container" style={{ textAlign: 'center', paddingTop: '60px', paddingBottom: '60px' }}>
+              <h2 style={{ fontSize: '32px', fontWeight: '700', color: 'white', marginBottom: '15px' }}>Your Family Deserves the Best Care</h2>
+              <p style={{ fontSize: '16px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '30px', maxWidth: '600px', margin: '0 auto 30px' }}>
+                Visit Gunjigavi Multispeciality Hospital Athani today — Compassion, Care and Commitment in every consultation.
+              </p>
+              <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ background: 'white', color: 'var(--primary)', fontWeight: '700', padding: '15px 40px', fontSize: '16px' }}>
+                <Calendar size={20} /> Book Appointment Now
+              </button>
+            </div>
+          </section>
+          </>
         )}
 
         {/* 2. ABOUT US MODULE */}
         {activeTab === 'about' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">About Our Hospital</h2>
+              <h1 className="section-title">About Our Hospital</h1>
               <p className="section-subtitle">Delivering ethical care with modern medical standards to Belagavi District</p>
               
               <div className="about-grid">
@@ -551,10 +847,10 @@ function App() {
                     Gunjigavi Multispeciality Hospital Athani is a modern, family-focused healthcare centre located near Shivaji Circle on Madabhavi Road, Athani, Belagavi district, Karnataka – 591304. Built on the core values of Compassion, Care and Commitment, we aim to provide high-quality, ethical and accessible healthcare.
                   </p>
                   <p className="about-desc">
-                    Our hospital brings together specialist care in Pediatrics, Obstetrics & Gynaecology and General Medicine, supported by experienced nursing staff and dedicated support teams. With a strong focus on patient safety, hygiene and personalised attention, we strive to make every patient feel heard, respected and well cared for.
+                    Our hospital brings together specialist care in <a onClick={() => handleTabClick('services')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>Pediatrics, Obstetrics & Gynaecology and General Medicine</a>, supported by experienced nursing staff and dedicated support teams. With a strong focus on patient safety, hygiene and personalised attention, we strive to make every patient feel heard, respected and well cared for.
                   </p>
                   <p className="about-desc">
-                    We are proud to be empanelled under major government schemes like Ayushman Bharat PM-JAY as well as a wide range of company and private health insurance plans, making quality healthcare more affordable and accessible for the people of Athani and surrounding areas.
+                    We are proud to be empanelled under major government schemes like <a onClick={() => handleTabClick('insurance')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>Ayushman Bharat PM-JAY as well as a wide range of company and private health insurance plans</a>, making quality healthcare more affordable and accessible for the people of Athani and surrounding areas.
                   </p>
                 </div>
 
@@ -606,7 +902,7 @@ function App() {
         {activeTab === 'doctors' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Meet Our Doctors</h2>
+              <h1 className="section-title">Meet Our Doctors</h1>
               <p className="section-subtitle">Our team of dedicated specialists providing expert care in Athani</p>
               
               <div className="doctors-grid">
@@ -620,7 +916,7 @@ function App() {
                     <h3 className="doctor-name">Dr. Anand Gunjigavi</h3>
                     <span className="doctor-qual">M.B.B.S, M.D. (Pediatrics)</span>
                     <p className="doctor-bio">
-                      Specialises in newborns, infants, and pediatric care. Evaluates childhood growth, developmental milestones, vaccination guidance, and common illnesses with a gentle child-friendly touch.
+                      Specialises in newborns, infants, and pediatric care. Evaluates childhood growth, developmental milestones, vaccination guidance, and common illnesses with a gentle child-friendly touch. Read more about <a onClick={() => handleTabClick('blogs')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>pediatric health insights</a> on our blog.
                     </p>
                     <div className="doctor-hours">
                       <div className="doctor-hours-title"><Clock size={14} /> Visiting Hours:</div>
@@ -643,7 +939,7 @@ function App() {
                     <h3 className="doctor-name">Dr. Rohini Gunjigavi</h3>
                     <span className="doctor-qual">M.B.B.S, D.G.O</span>
                     <p className="doctor-bio">
-                      Specialises in women's health, high-risk pregnancy management, normal deliveries, gynecological conditions and checkups with deep empathy and clinical excellence.
+                      Specialises in women's health, high-risk pregnancy management, normal deliveries, gynecological conditions and checkups with deep empathy and clinical excellence. Learn more about <a onClick={() => handleTabClick('blogs')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>gynecology and women's health</a> on our blog.
                     </p>
                     <div className="doctor-hours">
                       <div className="doctor-hours-title"><Clock size={14} /> Visiting Hours:</div>
@@ -669,7 +965,7 @@ function App() {
                     <h3 className="doctor-name">Dr. Sai Shruthi S. Gunjigavi</h3>
                     <span className="doctor-qual">M.B.B.S, M.D. (General Medicine)</span>
                     <p className="doctor-bio">
-                      Diagnoses and manages adult chronic conditions including diabetes, hypertension, thyroid, thyroid disorders, acute infections, respiratory conditions and preventive health mapping.
+                      Diagnoses and manages adult chronic conditions including diabetes, hypertension, thyroid, thyroid disorders, acute infections, respiratory conditions and preventive health mapping. Explore our <a onClick={() => handleTabClick('blogs')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>general health and wellness articles</a> for more information.
                     </p>
                     <div className="doctor-hours">
                       <div className="doctor-hours-title"><Clock size={14} /> Visiting Hours:</div>
@@ -690,7 +986,7 @@ function App() {
         {activeTab === 'services' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Departments & Services</h2>
+              <h1 className="section-title">Departments & Services</h1>
               <p className="section-subtitle">Advanced diagnostics and outpatient treatments tailored for families</p>
               
               {/* IN HOUSE DEPARTMENTS */}
@@ -704,7 +1000,7 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Heart size={24} /></div>
                     <h3 className="service-card-title">Pediatrics & Neonatology</h3>
-                    <p className="service-card-desc">Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance.</p>
+                    <p className="service-card-desc">Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>consultant pediatrician</a>.</p>
                     <ul className="service-list">
                       <li><Check size={14} /> Newborn & infant checkups</li>
                       <li><Check size={14} /> Childhood fevers & infections</li>
@@ -717,7 +1013,7 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Activity size={24} /></div>
                     <h3 className="service-card-title">Obstetrics & Gynaecology</h3>
-                    <p className="service-card-desc">Empathetic care mapping high-risk pregnancies, deliveries, postnatal care and female wellness disorders.</p>
+                    <p className="service-card-desc">Empathetic care mapping high-risk pregnancies, deliveries, postnatal care and female wellness disorders from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>experienced gynecologist</a>.</p>
                     <ul className="service-list">
                       <li><Check size={14} /> Antenatal pregnancy checkups</li>
                       <li><Check size={14} /> Normal & assisted deliveries</li>
@@ -730,7 +1026,7 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Shield size={24} /></div>
                     <h3 className="service-card-title">General Medicine</h3>
-                    <p className="service-card-desc">Broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions.</p>
+                    <p className="service-card-desc">Broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions with our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>general physician specialist</a>.</p>
                     <ul className="service-list">
                       <li><Check size={14} /> Diabetes & hypertension control</li>
                       <li><Check size={14} /> Thyroid & hormone management</li>
@@ -830,7 +1126,7 @@ function App() {
         {activeTab === 'appointments' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Schedule an Appointment</h2>
+              <h1 className="section-title">Schedule an Appointment</h1>
               <p className="section-subtitle">Book online to confirm your consultation slot with our medical specialists</p>
               
               <div className="appointment-grid">
@@ -838,7 +1134,7 @@ function App() {
                 <div className="appointment-info-card">
                   <h3 className="appointment-info-title">Booking Options</h3>
                   <p className="appointment-info-desc">
-                    Choose the booking method most convenient for you. Our reception team will coordinate with you immediately.
+                    Choose the booking method most convenient for you. Our reception team will coordinate with you immediately. View our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>specialist doctors</a> to select the best fit for your needs.
                   </p>
                   
                   <div className="appointment-method">
@@ -1017,8 +1313,8 @@ function App() {
         {activeTab === 'insurance' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Insurance & Schemes</h2>
-              <p className="section-subtitle">Government welfare benefits and cashless insurance tieups</p>
+              <h1 className="section-title">Insurance & Schemes</h1>
+              <p className="section-subtitle">Government welfare benefits and cashless insurance tieups. <a onClick={() => handleTabClick('appointments')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>Book your appointment</a> using any of these schemes.</p>
               
               {/* GOVERNMENT SCHEMES */}
               <div style={{ marginBottom: '50px' }}>
@@ -1162,7 +1458,7 @@ function App() {
         {activeTab === 'gallery' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Hospital Gallery</h2>
+              <h1 className="section-title">Hospital Gallery</h1>
               <p className="section-subtitle">Tour our medical facilities, reception areas, and clean diagnostics</p>
               
               {/* Category Filter Controls */}
@@ -1228,8 +1524,8 @@ function App() {
         {activeTab === 'blogs' && (
           <section className="section animate-fade-up">
             <div className="container">
-              <h2 className="section-title">Expert Healthcare Insights</h2>
-              <p className="section-subtitle">Learn about our specialist services and expert care</p>
+              <h1 className="section-title">Expert Healthcare Insights</h1>
+              <p className="section-subtitle">Learn about our <a onClick={() => handleTabClick('services')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>specialist services</a> and <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>expert doctors</a></p>
               
               <div className="blogs-grid">
                 {/* Blog 1: Pediatrician */}
@@ -1340,7 +1636,7 @@ function App() {
         {activeTab === 'contact' && (
           <section className="section animate-fade-up" id="contact">
             <div className="container">
-              <h2 className="section-title">Contact Us</h2>
+              <h1 className="section-title">Contact Us</h1>
               <p className="section-subtitle">Reach us at Athani or schedule a consultation call</p>
               
               <div className="contact-grid">
@@ -1404,6 +1700,22 @@ function App() {
                       </tbody>
                     </table>
                   </div>
+
+                  {/* Quick CTA Links */}
+                  <div style={{ marginTop: '30px', padding: '20px', background: 'rgba(13, 148, 136, 0.08)', borderRadius: '10px', textAlign: 'center' }}>
+                    <p style={{ marginBottom: '15px', color: 'var(--text-primary)', fontWeight: '600' }}>Ready to book or learn more?</p>
+                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+                      <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ flex: 1, minWidth: '160px' }}>
+                        <Calendar size={16} /> Book Appointment
+                      </button>
+                      <button className="btn-outline" onClick={() => handleTabClick('services')} style={{ flex: 1, minWidth: '160px' }}>
+                        View Services
+                      </button>
+                      <button className="btn-outline" onClick={() => handleTabClick('insurance')} style={{ flex: 1, minWidth: '160px' }}>
+                        View Insurance
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Google Maps interactive iframe */}
@@ -1435,7 +1747,7 @@ function App() {
                 <div className="blog-detail-container">
                   <img src={pediatricsBlogImg} alt="Pediatrician Blog" className="blog-detail-image" />
                   <div className="blog-detail-content">
-                    <h1 className="blog-detail-title">Consultant Pediatrician – Complete Child Health</h1>
+                    <h2 className="blog-detail-title">Consultant Pediatrician – Complete Child Health</h2>
                     <p className="blog-detail-category">Child Health & Development</p>
                     
                     <p className="blog-detail-intro">
@@ -1456,6 +1768,14 @@ function App() {
                     <div className="blog-detail-highlight">
                       <strong>Why This Matters:</strong> When searching for a child specialist doctor in Athani, families want someone clinically strong, approachable and child-friendly. Our pediatric services focus on building trust with both children and parents through clear communication and gentle care.
                     </div>
+
+                    <div style={{ marginTop: '30px', padding: '20px', background: 'rgba(13, 148, 136, 0.08)', borderRadius: '10px', textAlign: 'center' }}>
+                      <p style={{ marginBottom: '15px', color: 'var(--text-primary)' }}>Ready to consult with our specialist?</p>
+                      <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ width: '100%' }}>
+                        <Calendar size={18} /> Book Your Pediatric Appointment Now
+                      </button>
+                      <p style={{ fontSize: '12px', marginTop: '10px', color: 'var(--text-secondary)' }}>Or view <a onClick={() => handleTabClick('services')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>complete pediatric services</a></p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -1464,7 +1784,7 @@ function App() {
                 <div className="blog-detail-container">
                   <img src={gynaecologyBlogImg} alt="Gynecology Blog" className="blog-detail-image" />
                   <div className="blog-detail-content">
-                    <h1 className="blog-detail-title">Consultant Obstetrician & Gynaecologist – Women's Health</h1>
+                    <h2 className="blog-detail-title">Consultant Obstetrician & Gynaecologist – Women's Health</h2>
                     <p className="blog-detail-category">Women's Health & Safe Motherhood</p>
                     
                     <p className="blog-detail-intro">
@@ -1485,6 +1805,14 @@ function App() {
                     <div className="blog-detail-highlight">
                       <strong>Why This Matters:</strong> Women seeking a lady doctor for pregnancy in Athani want someone who understands their concerns, respects their privacy and explains every step clearly. Our specialist provides calm, respectful and confidential care.
                     </div>
+
+                    <div style={{ marginTop: '30px', padding: '20px', background: 'rgba(13, 148, 136, 0.08)', borderRadius: '10px', textAlign: 'center' }}>
+                      <p style={{ marginBottom: '15px', color: 'var(--text-primary)' }}>Ready to book a consultation?</p>
+                      <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ width: '100%' }}>
+                        <Calendar size={18} /> Schedule Your Gynecology Appointment
+                      </button>
+                      <p style={{ fontSize: '12px', marginTop: '10px', color: 'var(--text-secondary)' }}>Or explore <a onClick={() => handleTabClick('services')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>women's health services</a></p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -1493,7 +1821,7 @@ function App() {
                 <div className="blog-detail-container">
                   <img src={generalMedicineBlogImg} alt="General Medicine Blog" className="blog-detail-image" />
                   <div className="blog-detail-content">
-                    <h1 className="blog-detail-title">Consultant Physician (General Medicine) – Adult Health</h1>
+                    <h2 className="blog-detail-title">Consultant Physician (General Medicine) – Adult Health</h2>
                     <p className="blog-detail-category">Adult Medicine & Chronic Disease Management</p>
                     
                     <p className="blog-detail-intro">
@@ -1513,6 +1841,14 @@ function App() {
                     
                     <div className="blog-detail-highlight">
                       <strong>Why This Matters:</strong> When searching for a general physician in Athani, patients want a doctor who listens carefully, investigates thoroughly and gives practical advice for daily life. Our services provide clear diagnosis and realistic treatment plans.
+                    </div>
+
+                    <div style={{ marginTop: '30px', padding: '20px', background: 'rgba(13, 148, 136, 0.08)', borderRadius: '10px', textAlign: 'center' }}>
+                      <p style={{ marginBottom: '15px', color: 'var(--text-primary)' }}>Schedule a consultation today</p>
+                      <button className="btn-primary" onClick={() => handleTabClick('appointments')} style={{ width: '100%' }}>
+                        <Calendar size={18} /> Book Your General Medicine Appointment
+                      </button>
+                      <p style={{ fontSize: '12px', marginTop: '10px', color: 'var(--text-secondary)' }}>Or check out <a onClick={() => handleTabClick('services')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>general medicine services</a></p>
                     </div>
                   </div>
                 </div>
