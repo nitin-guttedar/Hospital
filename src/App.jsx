@@ -1719,7 +1719,7 @@ function App() {
                 </div>
 
                 {/* Google Maps interactive iframe */}
-                <div className="map-wrapper">
+                <div className="map-wrapper" style={{ position: 'relative' }}>
                   <iframe 
                     title="Gunjigavi Hospital Location"
                     className="map-iframe"
@@ -1728,6 +1728,13 @@ function App() {
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
+                  <a 
+                    href="https://maps.app.goo.gl/hfGWmpGxnsXyKXVGA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', zIndex: '1', cursor: 'pointer' }}
+                    title="Click to open full location in Google Maps"
+                  ></a>
                 </div>
               </div>
             </div>
@@ -1868,9 +1875,9 @@ function App() {
               Compassionate, expert medical care for children, women, and adults in Athani. Empanelled under Ayushman Bharat.
             </p>
             <div className="footer-social-links">
-              <a href="https://www.google.com/maps/place/Gunjigavi+Hospital" target="_blank" rel="noopener noreferrer"><MapPin size={18} /></a>
-              <a href="tel:8197270975"><Phone size={18} /></a>
-              <a href="mailto:hospitalgunjigavi@gmail.com"><Mail size={18} /></a>
+              <a href="https://maps.app.goo.gl/hfGWmpGxnsXyKXVGA" target="_blank" rel="noopener noreferrer" title="Open Hospital Location in Google Maps"><MapPin size={18} /></a>
+              <a href="tel:8197270975" title="Call Hospital"><Phone size={18} /></a>
+              <a href="mailto:hospitalgunjigavi@gmail.com" title="Email Hospital"><Mail size={18} /></a>
             </div>
           </div>
           
