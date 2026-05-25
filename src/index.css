@@ -530,7 +530,7 @@ body {
   background-image: var(--hero-bg-url);
   background-size: cover;
   background-position: center;
-  opacity: 0.80;
+  opacity: 0.92;
   pointer-events: none;
   z-index: 0;
 }
