@@ -829,6 +829,128 @@ function App() {
               </button>
             </div>
           </section>
+
+          {/* EMERGENCY & CRITICAL CARE SECTION - HOME PAGE */}
+          <section className="section animate-fade-up" style={{ background: 'rgba(239, 68, 68, 0.05)', padding: '60px 0' }}>
+            <div className="container">
+              <h2 className="section-title" style={{ color: '#ef4444' }}>🚨 24×7 Emergency & Critical Care</h2>
+              <p className="section-subtitle">Round-the-clock medical emergencies support with advanced life-support equipment</p>
+              
+              <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
+                <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '25px' }}>
+                  Our General Medicine and Emergency unit at Gunjigavi Multispeciality Hospital Athani is equipped to manage a wide range of medical emergencies, from sudden heart attacks to poisoning and snake-bite cases, with round-the-clock monitoring and advanced life-support equipment. Every emergency patient is assessed immediately, stabilised and managed as per standard protocols.
+                </p>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+                  <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Check size={18} /> All Medical Emergencies
+                    </h4>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', margin: '0' }}>Heart attacks, strokes, severe breathlessness, seizures, shock and other critical conditions handled with immediate assessment and stabilisation.</p>
+                  </div>
+
+                  <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Check size={18} /> Poisoning & Snake-bite Care
+                    </h4>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', margin: '0' }}>Dedicated setup to treat poisoning cases and snake-bite patients with close monitoring, timely antidote administration and ICU-level support.</p>
+                  </div>
+
+                  <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Check size={18} /> Advanced Respiratory Support
+                    </h4>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', margin: '0' }}>Ventilators, BiPAP and HFNC (high-flow nasal cannula) machines for patients with critical breathing problems and respiratory failure.</p>
+                  </div>
+
+                  <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Check size={18} /> ICU & High-Dependency Care
+                    </h4>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', margin: '0' }}>Continuous vital-signs monitoring, experienced critical-care nursing staff and consultant physician available round-the-clock.</p>
+                  </div>
+                </div>
+
+                <div style={{ padding: '12px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '10px', borderLeft: '4px solid #ef4444', marginTop: '20px' }}>
+                  <p style={{ fontSize: '12px', color: '#7f1d1d', fontStyle: 'italic', margin: '0' }}>
+                    <strong>Note:</strong> Emergency services are subject to doctor and bed availability. Very critical cases may be stabilised and referred to higher centres if specialised support is required.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* PEDIATRICS & OBSTETRICS SIDE-BY-SIDE CARDS - HOME PAGE */}
+          <section className="section animate-fade-up" style={{ padding: '60px 0' }}>
+            <div className="container">
+              <h2 className="section-title">👶 Specialized Care for Every Life Stage</h2>
+              <p className="section-subtitle">From newborns to mothers — comprehensive pediatric and obstetric services</p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '30px' }}>
+                {/* PEDIATRICS & NICU CARD */}
+                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--primary)', transition: 'var(--transition)', cursor: 'pointer' }} 
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} 
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--primary)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <Heart size={28} /> Pediatrics & Neonatology
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '20px' }}>
+                    Advanced tertiary-care NICU for premature and critically ill newborns, with expert Consultant Neonatologist and complete pediatric care support.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--primary)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>State-of-the-art NICU</strong> with ventilators, CPAP and HFNC systems</span>
+                    </li>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--primary)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>Continuous monitoring</strong> of oxygen, heart rate, breathing and temperature</span>
+                    </li>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--primary)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>Family counselling</strong> and long-term growth follow-up after discharge</span>
+                    </li>
+                  </ul>
+                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'white', border: '2px solid var(--primary)', color: 'var(--primary)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = 'white'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                    Learn More <ChevronRight size={18} />
+                  </button>
+                </div>
+
+                {/* OBSTETRICS & GYNECOLOGY CARD */}
+                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--accent)', transition: 'var(--transition)', cursor: 'pointer' }} 
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} 
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--accent)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    👩‍⚕️ Obstetrics & Gynecology
+                  </h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '20px' }}>
+                    Complete mother-and-baby care from pre-conception to postnatal follow-up, with expert management of high-risk pregnancies and infertility services.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--accent)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>High-risk pregnancy management</strong> following evidence-based protocols</span>
+                    </li>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--accent)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>Infertility evaluation</strong> and IUI/IVF treatments with transparent counselling</span>
+                    </li>
+                    <li style={{ display: 'flex', gap: '10px', fontSize: '13px', color: 'var(--text-primary)' }}>
+                      <Check size={16} style={{ color: 'var(--accent)', minWidth: '16px', marginTop: '2px' }} />
+                      <span><strong>Laparoscopic gynecology</strong> for fibroids, cysts, endometriosis and more</span>
+                    </li>
+                  </ul>
+                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'white', border: '2px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'white'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--accent)'; }}>
+                    Learn More <ChevronRight size={18} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
           </>
         )}
 
@@ -1112,8 +1234,229 @@ function App() {
                       <li><Check size={14} /> Laboratory testing tie-ups</li>
                     </ul>
                     <ul className="service-list" style={{ border: 'none', paddingTop: 0 }}>
-                      <li><Check size={14} /> Cashless Insurance help desk</li>
                       <li><Check size={14} /> Multiple scheme support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* DETAILED DEPARTMENT SECTIONS */}
+
+              {/* 1. GENERAL MEDICINE & EMERGENCY CARE - DETAILED */}
+              <div style={{ background: 'rgba(239, 68, 68, 0.05)', marginTop: '60px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
+                <h2 className="section-title" style={{ color: '#ef4444' }}>🚨 General Medicine & 24×7 Emergency Care</h2>
+              
+                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
+                  <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
+                    Our General Medicine and Emergency unit at Gunjigavi Multispeciality Hospital Athani is equipped to manage a wide range of medical emergencies, from sudden heart attacks to poisoning and snake-bite cases, with round-the-clock monitoring and advanced life-support equipment. Every emergency patient is assessed immediately, stabilised and managed as per standard protocols.
+                  </p>
+
+                  <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#ef4444', marginBottom: '20px' }}>Services & Capabilities:</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                    <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                      <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Check size={20} /> Medical Emergencies
+                      </h4>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '8px' }}>
+                        All medical emergencies handled, including:
+                      </p>
+                      <ul style={{ fontSize: '13px', color: 'var(--text-primary)', lineHeight: '1.6', listStyle: 'none', padding: '0', margin: '0' }}>
+                        <li>• Sudden heart attacks & cardiac emergencies</li>
+                        <li>• Stroke & neurological crises</li>
+                        <li>• Severe breathlessness & respiratory failure</li>
+                        <li>• Seizures & loss of consciousness</li>
+                        <li>• Shock & severe dehydration</li>
+                      </ul>
+                    </div>
+
+                    <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                      <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Check size={20} /> Poisoning & Toxicology
+                      </h4>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '8px' }}>
+                        Dedicated setup to treat poisoning cases and snake-bite patients with:
+                      </p>
+                      <ul style={{ fontSize: '13px', color: 'var(--text-primary)', lineHeight: '1.6', listStyle: 'none', padding: '0', margin: '0' }}>
+                        <li>• Close monitoring & vital-sign tracking</li>
+                        <li>• Timely antidote administration</li>
+                        <li>• ICU-level intensive care support</li>
+                        <li>• Specialized toxicology protocols</li>
+                      </ul>
+                    </div>
+
+                    <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                      <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Check size={20} /> Advanced Respiratory Support
+                      </h4>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '8px' }}>
+                        For patients with critical breathing problems:
+                      </p>
+                      <ul style={{ fontSize: '13px', color: 'var(--text-primary)', lineHeight: '1.6', listStyle: 'none', padding: '0', margin: '0' }}>
+                        <li>• Mechanical ventilators for complete respiratory support</li>
+                        <li>• BiPAP (Bilevel Positive Airway Pressure) systems</li>
+                        <li>• HFNC (High-Flow Nasal Cannula) oxygen delivery</li>
+                        <li>• 24/7 respiratory technician availability</li>
+                      </ul>
+                    </div>
+
+                    <div style={{ padding: '20px', background: 'rgba(239, 68, 68, 0.08)', borderRadius: '12px', borderLeft: '4px solid #ef4444' }}>
+                      <h4 style={{ fontSize: '16px', fontWeight: '700', color: '#ef4444', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Check size={20} /> ICU & High-Dependency Care
+                      </h4>
+                      <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '8px' }}>
+                        High-dependency unit with specialized equipment:
+                      </p>
+                      <ul style={{ fontSize: '13px', color: 'var(--text-primary)', lineHeight: '1.6', listStyle: 'none', padding: '0', margin: '0' }}>
+                        <li>• Continuous vital-signs monitoring systems</li>
+                        <li>• Experienced critical-care nursing staff</li>
+                        <li>• 1:1 or 1:2 nurse-to-patient ratios</li>
+                        <li>• Consultant Physician available round-the-clock</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div style={{ padding: '15px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '10px', borderLeft: '4px solid #ef4444', marginTop: '20px' }}>
+                    <p style={{ fontSize: '13px', color: '#7f1d1d', fontStyle: 'italic', margin: '0' }}>
+                      <strong>Important Note:</strong> Emergency services are provided subject to doctor and bed availability. Very critical cases may be stabilised and referred to higher centres if specialised support is required.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2. PEDIATRICS & NEONATOLOGY - DETAILED */}
+              <div style={{ background: 'rgba(13, 148, 136, 0.05)', marginTop: '40px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
+                <h2 className="section-title">👶 Pediatrics & Neonatology – Advanced NICU Care</h2>
+              
+                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--primary)' }}>
+                  <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
+                    The Pediatrics and Neonatology department at Gunjigavi Multispeciality Hospital offers comprehensive care for newborns, infants and children, supported by a dedicated tertiary-care Neonatal Intensive Care Unit (NICU). Our NICU is equipped to manage extremely premature babies and very sick neonates using modern ventilation and monitoring systems.
+                  </p>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '25px', marginBottom: '30px' }}>
+                    <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <Heart size={22} /> NICU Features
+                      </h3>
+                      <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Tertiary-care NICU</strong> designed for premature and critically ill newborns</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>State-of-the-art ventilators</strong>, CPAP and HFNC systems for advanced respiratory support</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Multiple syringe pumps</strong> and infusion devices for precise medicine & nutrition delivery</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Continuous monitoring</strong> of oxygen levels, heart rate, breathing and temperature</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Expert team</strong> – Consultant Neonatologist available for high-risk deliveries & resuscitation</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div style={{ padding: '25px', background: 'rgba(13, 148, 136, 0.1)', borderRadius: '12px', borderLeft: '4px solid var(--primary)' }}>
+                      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <Activity size={22} /> Pediatric Care Services
+                      </h3>
+                      <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Newborn screening</strong> and early detection of complications</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Growth & development</strong> tracking with regular milestones assessment</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Immunization programs</strong> and preventive health protocols</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Family counselling</strong> and parent education for long-term outcomes</span>
+                        </li>
+                        <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                          <Check size={18} style={{ color: 'var(--primary)', minWidth: '18px', marginTop: '1px' }} />
+                          <span><strong>Regular follow-up</strong> support for development after NICU discharge</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3. OBSTETRICS, GYNECOLOGY & INFERTILITY - DETAILED */}
+              <div style={{ background: 'rgba(217, 119, 6, 0.05)', marginTop: '40px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
+                <h2 className="section-title">👩‍⚕️ Obstetrics, Gynaecology & Infertility – Mother & Baby Care Under One Roof</h2>
+              
+                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--accent)' }}>
+                  <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
+                    Our Obstetrics and Gynaecology department provides complete care for women at every stage of life, with special focus on high-risk pregnancies and advanced infertility services. Mother and baby receive continuous care under one roof, from pre-conception counselling to delivery and postnatal follow-up.
+                  </p>
+
+                  {/* Sub-section: High-Risk Pregnancy */}
+                  <div style={{ marginBottom: '30px', padding: '25px', background: 'rgba(217, 119, 6, 0.08)', borderRadius: '12px', borderLeft: '4px solid var(--accent)' }}>
+                    <h3 style={{ fontSize: '19px', fontWeight: '700', color: 'var(--accent)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                       High-Risk Pregnancy & Safe Delivery
+                    </h3>
+                    <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span>All high-risk deliveries managed following evidence-based protocols – pregnancies with hypertension, diabetes, previous caesarean, twins or other complications</span>
+                      </li>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span>Labour room and operation theatre support for normal, assisted and caesarean deliveries as indicated</span>
+                      </li>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span>Close coordination with Neonatology team for safe mother-and-baby outcomes, especially in high-risk and preterm births</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Sub-section: Infertility Services */}
+                  <div style={{ marginBottom: '30px', padding: '25px', background: 'rgba(217, 119, 6, 0.08)', borderRadius: '12px', borderLeft: '4px solid var(--accent)' }}>
+                    <h3 style={{ fontSize: '19px', fontWeight: '700', color: 'var(--accent)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                       Infertility Evaluation & Treatment
+                    </h3>
+                    <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span><strong>Comprehensive evaluation</strong> and counselling for couples trying to conceive, including hormonal tests, scans and fertility work-up</span>
+                      </li>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span><strong>Infertility treatments</strong> such as IUI and IVF planned using modern reproductive-medicine principles</span>
+                      </li>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span><strong>Transparent counselling</strong> about success rates and options so couples can choose the best path for their family</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Sub-section: Laparoscopic Surgery */}
+                  <div style={{ padding: '25px', background: 'rgba(217, 119, 6, 0.08)', borderRadius: '12px', borderLeft: '4px solid var(--accent)' }}>
+                    <h3 style={{ fontSize: '19px', fontWeight: '700', color: 'var(--accent)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                       Laparoscopic Gynecology Surgery
+                    </h3>
+                    <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span><strong>Keyhole surgeries</strong> for selected gynaecological and infertility-related conditions – smaller cuts, less pain and quicker recovery vs. traditional open surgery</span>
+                      </li>
+                      <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
+                        <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
+                        <span><strong>Procedures for multiple conditions</strong> – fibroids, ovarian cysts, endometriosis, pelvic problems and other gynecology issues based on detailed evaluation</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
