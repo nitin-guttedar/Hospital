@@ -26,6 +26,9 @@ const pediatricsBlogImg = new URL('./assets/BlogsImages/Pediatrics.png', import.
 const gynaecologyBlogImg = new URL('./assets/BlogsImages/Gynaecology.png', import.meta.url).href;
 const generalMedicineBlogImg = new URL('./assets/BlogsImages/GeneralMedicine.png', import.meta.url).href;
 
+// Home hero background (translucent only on first page)
+const homeHeroBgImg = new URL('./assets/GalleryImages&Videos/7A9A5687.JPG', import.meta.url).href;
+
 
 // Insurance Banner Images
 const govtSchemeBannerImg = new URL('./assets/InsuranceImages/GovtScheme.PNG', import.meta.url).href;
@@ -461,7 +464,10 @@ function App() {
         {/* 1. HOME MODULE */}
         {activeTab === 'home' && (
           <>
-          <section className="hero-section animate-fade-up">
+<section
+                className="hero-section hero-section--home animate-fade-up"
+                style={{ '--hero-bg-url': `url(${homeHeroBgImg})` }}
+              >
             <div className="container hero-grid">
               <div className="hero-content">
                 <span className="hero-tagline">Compassion • Care • Commitment</span>
