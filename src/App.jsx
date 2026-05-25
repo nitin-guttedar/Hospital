@@ -1129,12 +1129,12 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Shield size={24} /></div>
                     <h3 className="service-card-title">General Medicine</h3>
-                    <p className="service-card-desc">Broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions with our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>general physician specialist</a>.</p>
+                    <p className="service-card-desc">All emergency management and treatments along with broad diagnosis and long-term care management for adult acute infections and chronic lifestyle conditions with our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>general physician specialist</a>.</p>
                     <ul className="service-list">
+                      <li><Check size={14} /> All emergency management & treatments</li>
                       <li><Check size={14} /> Diabetes & hypertension control</li>
                       <li><Check size={14} /> Thyroid & hormone management</li>
                       <li><Check size={14} /> Cardiac & stomach disorders</li>
-                      <li><Check size={14} /> Annual full body check-ups</li>
                     </ul>
                   </div>
 
@@ -1142,7 +1142,7 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Heart size={24} /></div>
                     <h3 className="service-card-title">Pediatrics & Neonatology</h3>
-                    <p className="service-card-desc">Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>consultant pediatrician</a>.</p>
+                    <p className="service-card-desc">Baby and mother care at one roof. Complete medical care for newborns, infants, children, and adolescents under expert pediatric guidance from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>consultant pediatrician</a>.</p>
                     <ul className="service-list">
                       <li><Check size={14} /> Newborn & infant checkups</li>
                       <li><Check size={14} /> Childhood fevers & infections</li>
@@ -1155,12 +1155,12 @@ function App() {
                   <div className="service-card">
                     <div className="service-card-icon"><Activity size={24} /></div>
                     <h3 className="service-card-title">Obstetrics & Gynaecology</h3>
-                    <p className="service-card-desc">Empathetic care mapping high-risk pregnancies, deliveries, postnatal care and female wellness disorders from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>experienced gynecologist</a>.</p>
+                    <p className="service-card-desc">Empathetic care for high-risk pregnancies, deliveries, postnatal care, female wellness disorders, and infertility treatments from our <a onClick={() => handleTabClick('doctors')} style={{color: 'var(--primary)', textDecoration: 'underline', cursor: 'pointer', fontWeight: '600'}}>experienced gynecologist</a>.</p>
                     <ul className="service-list">
+                      <li><Check size={14} /> Open & laparoscopy surgery</li>
+                      <li><Check size={14} /> Infertility IUI and IVF treatments</li>
                       <li><Check size={14} /> Antenatal pregnancy checkups</li>
                       <li><Check size={14} /> Normal & assisted deliveries</li>
-                      <li><Check size={14} /> Postnatal & lactation support</li>
-                      <li><Check size={14} /> PCOS & menstrual treatments</li>
                     </ul>
                   </div>
                 </div>
@@ -1173,7 +1173,7 @@ function App() {
                   Visiting Specialists
                 </h3>
                 <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
-                  For selected departments - Expert visiting doctors available for specialized consultations
+                  For selected departments | selected treatment - Expert visiting doctors available for specialized consultations
                 </p>
                 <div className="services-grid">
                   {/* Dermatology */}
@@ -1197,10 +1197,10 @@ function App() {
                       <Info size={24} />
                     </div>
                     <h3 className="service-card-title">ENT (Otolaryngology)</h3>
-                    <p className="service-card-desc">Specialized ear, nose, and throat consultations for hearing and voice disorders.</p>
+                    <p className="service-card-desc">Specialized ear, nose, and throat consultations with speech therapy services for hearing and voice disorders.</p>
                     <ul className="service-list">
+                      <li><Check size={14} /> Speech therapy</li>
                       <li><Check size={14} /> Hearing assessment & audiometry</li>
-                      <li><Check size={14} /> Sinus & nasal conditions</li>
                       <li><Check size={14} /> Throat & voice disorders</li>
                       <li><Check size={14} /> Pediatric ENT consultations</li>
                     </ul>
@@ -1212,12 +1212,12 @@ function App() {
                       <Heart size={24} />
                     </div>
                     <h3 className="service-card-title">Infertility Specialist</h3>
-                    <p className="service-card-desc">Comprehensive fertility consultations and reproductive health guidance for couples.</p>
+                    <p className="service-card-desc">Comprehensive fertility consultations by experts from Indira IVF and in-house gynecologist with IUI and IVF treatments.</p>
                     <ul className="service-list">
+                      <li><Check size={14} /> IUI treatments</li>
+                      <li><Check size={14} /> IVF treatments</li>
                       <li><Check size={14} /> Fertility assessments & investigations</li>
                       <li><Check size={14} /> Reproductive counselling</li>
-                      <li><Check size={14} /> Treatment planning & referrals</li>
-                      <li><Check size={14} /> Lifestyle & diagnostic guidance</li>
                     </ul>
                   </div>
                 </div>
@@ -1316,7 +1316,7 @@ function App() {
                       <ul style={{ fontSize: '13px', color: 'var(--text-primary)', lineHeight: '1.6', listStyle: 'none', padding: '0', margin: '0' }}>
                         <li>• Continuous vital-signs monitoring systems</li>
                         <li>• Experienced critical-care nursing staff</li>
-                        <li>• 1:1 or 1:2 nurse-to-patient ratios</li>
+                        {/* <li>• 1:1 or 1:2 nurse-to-patient ratios</li> */}
                         <li>• Consultant Physician available round-the-clock</li>
                       </ul>
                     </div>
@@ -1332,11 +1332,11 @@ function App() {
 
               {/* 2. PEDIATRICS & NEONATOLOGY - DETAILED */}
               <div style={{ background: 'rgba(13, 148, 136, 0.05)', marginTop: '40px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
-                <h2 className="section-title">👶 Pediatrics & Neonatology – Advanced NICU Care</h2>
+                <h2 className="section-title">👶 Pediatrics & Neonatology – Baby and Mother Care at One Roof</h2>
               
                 <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--primary)' }}>
                   <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
-                    The Pediatrics and Neonatology department at Gunjigavi Multispeciality Hospital offers comprehensive care for newborns, infants and children, supported by a dedicated tertiary-care Neonatal Intensive Care Unit (NICU). Our NICU is equipped to manage extremely premature babies and very sick neonates using modern ventilation and monitoring systems.
+                    The Pediatrics and Neonatology department at Gunjigavi Multispeciality Hospital offers comprehensive baby and mother care at one roof, with support for newborns, infants and children through a dedicated tertiary-care Neonatal Intensive Care Unit (NICU). Our NICU is equipped to manage extremely premature babies and very sick neonates using modern ventilation and monitoring systems.
                   </p>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '25px', marginBottom: '30px' }}>
@@ -1416,7 +1416,7 @@ function App() {
                     <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
                         <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
-                        <span>All high-risk deliveries managed following evidence-based protocols – pregnancies with hypertension, diabetes, previous caesarean, twins or other complications</span>
+                        <span>All high-risk deliveries managed following evidence-based protocols – pregnancies with hypertension, diabetes (with physician coordination), previous cesarean, twins or other complications</span>
                       </li>
                       <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
                         <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
@@ -1437,15 +1437,15 @@ function App() {
                     <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
                         <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
-                        <span><strong>Comprehensive evaluation</strong> and counselling for couples trying to conceive, including hormonal tests, scans and fertility work-up</span>
+                        <span><strong>Expert specialists</strong> from Indira IVF and in-house gynecologist providing comprehensive infertility services</span>
                       </li>
                       <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
                         <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
-                        <span><strong>Infertility treatments</strong> such as IUI and IVF planned using modern reproductive-medicine principles</span>
+                        <span><strong>IUI and IVF treatments</strong> planned using modern reproductive-medicine principles for couples trying to conceive</span>
                       </li>
                       <li style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-primary)' }}>
                         <Check size={18} style={{ color: 'var(--accent)', minWidth: '18px', marginTop: '1px' }} />
-                        <span><strong>Transparent counselling</strong> about success rates and options so couples can choose the best path for their family</span>
+                        <span><strong>Comprehensive evaluation</strong> and counselling including hormonal tests, scans and complete fertility work-up</span>
                       </li>
                     </ul>
                   </div>
@@ -1674,7 +1674,7 @@ function App() {
                 </h3>
                 <img src={govtSchemeBannerImg} alt="Government Health Schemes" className="insurance-banner" />
                 <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
-                  For selected departments - Empanelled under multiple government schemes
+                  For selected departments | selected treatment - Empanelled under multiple government schemes
                 </p>
                 <div className="schemes-grid">
                   {/* ABARK */}
@@ -1753,18 +1753,18 @@ function App() {
                 </h3>
                 {/* <img src={insuranceBannerImg} alt="Private Health Insurance Accepted" className="insurance-banner" /> */}
                 <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', marginBottom: '25px' }}>
-                  For selected departments - We accept all major health insurance companies
+                  For selected departments | selected treatment - We accept all major health insurance companies
                 </p>
                 <div className="insurance-card">
                   <div className="insurance-intro-flex">
                     <div className="insurance-intro-desc">
                       <h3>All Health Insurance Companies Accepted</h3>
                       <p>
-                        Gunjigavi Multispeciality Hospital Athani accepts health insurance from all major insurance providers in India. Our cashless facilities enable seamless medical treatment without upfront payment, making healthcare affordable and accessible.
+                        Gunjigavi Multispeciality Hospital Athani accepts health insurance from all major insurance providers in India. 
                       </p>
-                      <p>
+                      {/* <p>
                         We handle all documentation and pre-authorization requirements directly with your insurance company, ensuring hassle-free admission and treatment.
-                      </p>
+                      </p> */}
                     </div>
                     
                     <div className="government-badge">
@@ -1775,18 +1775,18 @@ function App() {
                   </div>
 
                   {/* Insurance companies list */}
-                  <h4 className="insurance-list-title">Indicative List of Accepted Insurers</h4>
-                  <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '15px' }}>
+                  {/* <h4 className="insurance-list-title">Indicative List of Accepted Insurers</h4> */}
+                  {/* <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '15px' }}>
                     We work with a wide range of health insurance providers. Please bring your insurance policy details during admission and verify cashless tie-up status at our reception desk.
-                  </p>
-                  <div className="insurance-grid">
+                  </p> */}
+                  {/* <div className="insurance-grid">
                     {insuranceCompanies.map((c, i) => (
                       <div className="insurance-item" key={i}>
                         <Check size={14} />
                         <span>{c}</span>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Reception support helpbox */}
                   <div className="guidance-box">
