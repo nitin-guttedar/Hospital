@@ -141,7 +141,7 @@ const seoData = {
   },
   appointments: {
     title: 'Book Appointment Online - Gunjigavi Hospital Athani',
-    description: 'Schedule your appointment online, via call (+91-8197270975), WhatsApp, or visit our OPD counter. Easy booking with confirmed appointment slots.',
+    description: 'Schedule your appointment online, via call (+91-9482384887), WhatsApp, or visit our OPD counter. Easy booking with confirmed appointment slots.',
     keywords: 'book appointment, online consultation, hospital appointment Athani, schedule doctor visit, medical booking'
   },
   insurance: {
@@ -161,7 +161,7 @@ const seoData = {
   },
   contact: {
     title: 'Contact Gunjigavi Hospital - Location, Phone, Hours & Directions',
-    description: 'Visit us at Deshpande Nagar, Athani (591304). Emergency: 8197270975 | OPD: 9482384887 | Email: hospitalgunjigavi@gmail.com',
+    description: 'Visit us at Deshpande Nagar, Athani (591304). Emergency: 9482384887 | OPD: 9482384887 | Email: hospitalgunjigavi@gmail.com',
     keywords: 'contact hospital, hospital location, phone number, address Athani, hospital hours, directions'
   }
 };
@@ -355,7 +355,7 @@ function App() {
       {/* 24/7 Red Alert Emergency Ribbon */}
       <div className="emergency-strip">
         <AlertCircle size={16} />
-        <span>EMERGENCY HELPLINE (24/7): <strong>8197270975</strong></span>
+        <span>EMERGENCY HELPLINE (24/7): <strong>9482384887</strong></span>
         <span className="dashboard-divider">|</span>
         <span>OPD Desk: <strong>9482384887</strong></span>
         <a href="#contact" onClick={() => handleTabClick('contact')}>Get Directions</a>
@@ -481,8 +481,8 @@ function App() {
                   <button className="btn-primary" onClick={() => handleTabClick('appointments')}>
                     <Calendar size={18} /> Book Appointment
                   </button>
-                  <a href="tel:8197270975" className="btn-outline">
-                    <Phone size={18} /> Call Now: 8197270975
+                  <a href="tel:9482384887" className="btn-outline">
+                    <Phone size={18} /> Call Now: 9482384887
                   </a>
                 </div>
                 <div className="hero-stats">
@@ -756,7 +756,7 @@ function App() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
                 <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                   <Phone size={18} style={{ color: 'var(--primary)' }} />
-                  <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Call us: <a href="tel:8197270975" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
+                  <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Call us: <a href="tel:9482384887" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
                 </div>
                 <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                   <MessageCircle size={18} style={{ color: 'var(--primary)' }} />
@@ -1488,11 +1488,11 @@ function App() {
                   </p>
                   
                   <div className="appointment-method">
-                    <a href="tel:8197270975" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <a href="tel:9482384887" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
                       <div className="method-icon"><Phone size={16} /></div>
                       <div className="method-details">
                         <h4>Call Reception</h4>
-                        <p><strong>8197270975</strong> (OPD timings)</p>
+                        <p><strong>9482384887</strong> (OPD timings)</p>
                       </div>
                     </a>
                     <a href="tel:9482384887" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -1506,7 +1506,7 @@ function App() {
                       <div className="method-icon"><CheckCircle size={16} /></div>
                       <div className="method-details">
                         <h4>WhatsApp Booking</h4>
-                        <p>Send details (Name, Age, Doctor) to <strong>8197270975</strong></p>
+                        <p>Send details (Name, Age, Doctor) to <strong>9482384887</strong></p>
                       </div>
                     </a>
                   </div>
@@ -2007,7 +2007,7 @@ function App() {
                     <div className="contact-card-icon"><Phone size={20} /></div>
                     <div className="contact-card-details">
                       <h4>Contact Numbers</h4>
-                      <p>Main Admission: <a href="tel:8197270975"><strong>8197270975</strong></a></p>
+                      <p>Main Admission: <a href="tel:9482384887"><strong>9482384887</strong></a></p>
                       <p>OPD Counter: <a href="tel:9482384887"><strong>9482384887</strong></a></p>
                     </div>
                   </div>
@@ -2226,7 +2226,7 @@ function App() {
             </p>
             <div className="footer-social-links">
               <a href="https://maps.app.goo.gl/hfGWmpGxnsXyKXVGA" target="_blank" rel="noopener noreferrer" title="Open Hospital Location in Google Maps"><MapPin size={18} /></a>
-              <a href="tel:8197270975" title="Call Hospital"><Phone size={18} /></a>
+              <a href="tel:9482384887" title="Call Hospital"><Phone size={18} /></a>
               <a href="mailto:hospitalgunjigavi@gmail.com" title="Email Hospital"><Mail size={18} /></a>
             </div>
           </div>
@@ -2261,7 +2261,7 @@ function App() {
               </li>
               <li>
                 <Phone size={18} />
-                <span>Help: 8197270975 / 9482384887</span>
+                <span>Help: 9482384887 / 9482384887</span>
               </li>
               <li>
                 <Mail size={18} />
