@@ -4,7 +4,8 @@ import emailjs from '@emailjs/browser';
 import { 
   Phone, Mail, Clock, MapPin, Calendar, Check, ChevronRight, ChevronLeft, 
   Sun, Moon, Menu, X, Shield, Image, Heart, Info, ExternalLink, User, Trash2, 
-  Compass, Activity, AlertCircle, PlusCircle, CheckCircle, Search, HelpCircle, MessageCircle
+  Compass, Activity, AlertCircle, PlusCircle, CheckCircle, Search, HelpCircle, MessageCircle,
+  Building, CreditCard, Stethoscope, Award, Zap, Volume2
 } from 'lucide-react';
 import './App.css';
 
@@ -358,7 +359,7 @@ function App() {
         <AlertCircle size={16} />
         <span>EMERGENCY HELPLINE (24/7): <strong>9482384887</strong></span>
         <span className="dashboard-divider">|</span>
-        <span>OPD Desk: <strong>9482384887</strong></span>
+        <span>OPD Desk: <strong>8197270975</strong></span>
         <a href="#contact" onClick={() => handleTabClick('contact')}>Get Directions</a>
       </div>
 
@@ -568,25 +569,26 @@ function App() {
             <div className="container">
               <div className="highlights-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', marginTop: '40px' }}>
                 <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>🏥</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><Building size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Multispeciality Hospital</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>3 core departments + 3 visiting specialties</p>
                 </div>
 
-                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>👨‍⚕️</div>
+                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer', position: 'relative' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{ position: 'absolute', top: '-12px', right: '15px', background: 'var(--accent)', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', whiteSpace: 'nowrap' }}>10+ Years</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><Stethoscope size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Experienced Doctors</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>MD Pediatrics · DGO · MD General Medicine</p>
                 </div>
 
                 <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>💳</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><CreditCard size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Insurance & Schemes</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ayushman Bharat, KASS, Yashaswini & more</p>
                 </div>
 
                 <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{ fontSize: '40px', marginBottom: '15px' }}>📍</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><MapPin size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Central Location</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Near Shivaji Circle, Athani – 591304</p>
                 </div>
@@ -671,17 +673,17 @@ function App() {
               
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', marginTop: '40px' }}>
                 <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>🩺</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><Zap size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Dermatology</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Skin, Hair & Nail problems</p>
                 </div>
                 <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>👂</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><Volume2 size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>ENT</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ear, Nose & Throat care</p>
                 </div>
                 <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '36px', marginBottom: '15px' }}>👶</div>
+                  <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}><Heart size={40} color="var(--primary)" strokeWidth={1.5} /></div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Infertility Specialist</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Fertility evaluation & counselling</p>
                 </div>
@@ -1243,6 +1245,7 @@ function App() {
                     </ul>
                     <ul className="service-list" style={{ border: 'none', paddingTop: 0 }}>
                       <li><Check size={14} /> Multiple scheme support</li>
+                      <li><Check size={14} /> Canteen Availaible</li>
                     </ul>
                   </div>
                 </div>
@@ -1500,7 +1503,7 @@ function App() {
                       <div className="method-icon"><Phone size={16} /></div>
                       <div className="method-details">
                         <h4>OPD Counter Desk</h4>
-                        <p><strong>9482384887</strong> (For walk-ins and tokens)</p>
+                        <p><strong>8197270975</strong> (For walk-ins and tokens)</p>
                       </div>
                     </a>
                     <a href="https://wa.me/918197270975?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -1771,7 +1774,7 @@ function App() {
                     <div className="government-badge">
                       <CheckCircle size={36} style={{ marginBottom: '10px' }} />
                       <span className="govt-badge-title">Accepted</span>
-                      <span className="govt-badge-desc">All Insurance Companies (Verify at Reception)</span>
+                      <span className="govt-badge-desc">All Insurance Claims - Cashless or Reimbursement (Verify at Reception)</span>
                     </div>
                   </div>
 
@@ -2262,7 +2265,7 @@ function App() {
               </li>
               <li>
                 <Phone size={18} />
-                <span>Help: 9482384887 / 9482384887</span>
+                <span>Help: 9482384887 / 8197270975</span>
               </li>
               <li>
                 <Mail size={18} />
