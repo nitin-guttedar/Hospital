@@ -39,7 +39,7 @@ const galleryFiles = [
   "7A9A5432.jpg", "7A9A5443.JPG", "7A9A5449.JPG", "7A9A5461.JPG", "7A9A5477.JPG",
   "7A9A5499.JPG", "7A9A5509.JPG", "7A9A5522.JPG", "7A9A5540.JPG", "7A9A5550.JPG",
   "7A9A5558.JPG", "7A9A5562.JPG", "7A9A5595.JPG", "7A9A5624.JPG", "7A9A5630.JPG",
-  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG"
+  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG", "NICU.JPG"
 ];
 
 // Manual category mapping for each image - Customize each image's category here
@@ -64,7 +64,8 @@ const imageCategoryMap = {
   "7A9A5664.JPG": "building",
   "7A9A5673.JPG": "consultation",
   "7A9A5687.JPG": "building",
-  "7A9A5688.JPG": "building"
+  "7A9A5688.JPG": "building",
+  "NICU.JPG": "maternity"
 };
 
 // Category display names
@@ -400,7 +401,7 @@ function App() {
             <img src={appLogoImg} className="logo-img" alt="Gunjigavi Logo" />
             <div className="logo-text">
               Gunjigavi Multispeciality
-              <span className="logo-sub">HOSPITAL, ATHANI</span>
+              <span style={{padding:5}} className="logo-sub">HOSPITAL, ATHANI</span>
             </div>
           </a>
 
@@ -566,25 +567,25 @@ function App() {
           <section className="section animate-fade-up" style={{ background: 'rgba(13, 148, 136, 0.05)' }}>
             <div className="container">
               <div className="highlights-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', marginTop: '40px' }}>
-                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                   <div style={{ fontSize: '40px', marginBottom: '15px' }}>🏥</div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Multispeciality Hospital</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>3 core departments + 3 visiting specialties</p>
                 </div>
 
-                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                   <div style={{ fontSize: '40px', marginBottom: '15px' }}>👨‍⚕️</div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Experienced Doctors</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>MD Pediatrics · DGO · MD General Medicine</p>
                 </div>
 
-                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                   <div style={{ fontSize: '40px', marginBottom: '15px' }}>💳</div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Insurance & Schemes</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ayushman Bharat, KASS, Yashaswini & more</p>
                 </div>
 
-                <div className="highlight-box" style={{ padding: '30px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                <div className="highlight-box" style={{ padding: '30px', background: 'var(--bg-card)', borderRadius: '15px', boxShadow: 'var(--shadow-sm)', textAlign: 'center', transition: 'var(--transition)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                   <div style={{ fontSize: '40px', marginBottom: '15px' }}>📍</div>
                   <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Central Location</h3>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Near Shivaji Circle, Athani – 591304</p>
@@ -669,17 +670,17 @@ function App() {
               <p className="section-subtitle">Expert consultations on selected days</p>
               
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '25px', marginTop: '40px' }}>
-                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
                   <div style={{ fontSize: '36px', marginBottom: '15px' }}>🩺</div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Dermatology</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Skin, Hair & Nail problems</p>
                 </div>
-                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
                   <div style={{ fontSize: '36px', marginBottom: '15px' }}>👂</div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>ENT</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Ear, Nose & Throat care</p>
                 </div>
-                <div style={{ background: 'white', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '25px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
                   <div style={{ fontSize: '36px', marginBottom: '15px' }}>👶</div>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--primary)', marginBottom: '10px' }}>Infertility Specialist</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Fertility evaluation & counselling</p>
@@ -754,15 +755,15 @@ function App() {
               </p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
-                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                <div style={{ padding: '15px', background: 'var(--bg-card)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                   <Phone size={18} style={{ color: 'var(--primary)' }} />
                   <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Call us: <a href="tel:9482384887" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
                 </div>
-                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                <div style={{ padding: '15px', background: 'var(--bg-card)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                   <MessageCircle size={18} style={{ color: 'var(--primary)' }} />
                   <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> WhatsApp: <a href="https://wa.me/918197270975" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }}>81972 70975</a></span>
                 </div>
-                <div style={{ padding: '15px', background: 'white', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
+                <div style={{ padding: '15px', background: 'var(--bg-card)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
                   <MapPin size={18} style={{ color: 'var(--primary)' }} />
                   <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}> Walk in: Near Shivaji Circle, Athani</span>
                 </div>
@@ -783,7 +784,7 @@ function App() {
               <h2 className="section-title" style={{ color: '#ef4444' }}>🚨 24×7 Emergency & Critical Care</h2>
               <p className="section-subtitle">Round-the-clock medical emergencies support with advanced life-support equipment</p>
               
-              <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
+              <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
                 <p style={{ fontSize: '15px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '25px' }}>
                   Our General Medicine and Emergency unit at Gunjigavi Multispeciality Hospital Athani is equipped to manage a wide range of medical emergencies, from sudden heart attacks to poisoning and snake-bite cases, with round-the-clock monitoring and advanced life-support equipment. Every emergency patient is assessed immediately, stabilised and managed as per standard protocols.
                 </p>
@@ -835,9 +836,9 @@ function App() {
               
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '30px' }}>
                 {/* PEDIATRICS & NICU CARD */}
-                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--primary)', transition: 'var(--transition)', cursor: 'pointer' }} 
+                <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--primary)', transition: 'var(--transition)', cursor: 'pointer' }} 
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} 
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>  
                   <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--primary)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <Heart size={28} /> Pediatrics & Neonatology
                   </h3>
@@ -858,17 +859,17 @@ function App() {
                       <span><strong>Family counselling</strong> and long-term growth follow-up after discharge</span>
                     </li>
                   </ul>
-                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'white', border: '2px solid var(--primary)', color: 'var(--primary)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
+                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'var(--bg-card)', border: '2px solid var(--primary)', color: 'var(--primary)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
                     onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = 'white'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.color = 'var(--primary)'; }}>
                     Learn More <ChevronRight size={18} />
                   </button>
                 </div>
 
                 {/* OBSTETRICS & GYNECOLOGY CARD */}
-                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--accent)', transition: 'var(--transition)', cursor: 'pointer' }} 
+                <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', boxShadow: 'var(--shadow-md)', borderTop: '6px solid var(--accent)', transition: 'var(--transition)', cursor: 'pointer' }} 
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'} 
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>  
                   <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--accent)', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     👩‍⚕️ Obstetrics & Gynecology
                   </h3>
@@ -889,9 +890,9 @@ function App() {
                       <span><strong>Laparoscopic gynecology</strong> for fibroids, cysts, endometriosis and more</span>
                     </li>
                   </ul>
-                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'white', border: '2px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
+                  <button onClick={() => handleTabClick('services')} style={{ marginTop: '20px', width: '100%', padding: '12px 20px', background: 'var(--bg-card)', border: '2px solid var(--accent)', color: 'var(--accent)', borderRadius: '8px', fontWeight: '600', fontSize: '15px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'var(--transition)' }} 
                     onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'white'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--accent)'; }}>
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.color = 'var(--accent)'; }}>
                     Learn More <ChevronRight size={18} />
                   </button>
                 </div>
@@ -906,7 +907,7 @@ function App() {
               
               <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
                 
-                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
                   <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
                     {[...Array(5)].map((_, i) => (
                       <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
@@ -918,7 +919,7 @@ function App() {
                   <p style={{ fontSize: '13px', fontWeight: '700', color: 'var(--primary)' }}>— Patient from Athani</p>
                 </div>
 
-                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
                   <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
                     {[...Array(5)].map((_, i) => (
                       <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
@@ -930,7 +931,7 @@ function App() {
                   <p style={{ fontSize: '13px', fontWeight: '700', color: 'var(--primary)' }}>— Patient from Chikodi Road, Athani</p>
                 </div>
 
-                <div style={{ background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
+                <div style={{ background: 'var(--bg-card)', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
                   <div style={{ display: 'flex', gap: '3px', marginBottom: '15px' }}>
                     {[...Array(5)].map((_, i) => (
                       <span key={i} style={{ color: '#FCD34D', fontSize: '18px' }}>⭐</span>
@@ -1253,7 +1254,7 @@ function App() {
               <div style={{ background: 'rgba(239, 68, 68, 0.05)', marginTop: '60px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
                 <h2 className="section-title" style={{ color: '#ef4444' }}>🚨 General Medicine & 24×7 Emergency Care</h2>
               
-                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
+                <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid #ef4444' }}>
                   <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
                     Our General Medicine and Emergency unit at Gunjigavi Multispeciality Hospital Athani is equipped to manage a wide range of medical emergencies, from sudden heart attacks to poisoning and snake-bite cases, with round-the-clock monitoring and advanced life-support equipment. Every emergency patient is assessed immediately, stabilised and managed as per standard protocols.
                   </p>
@@ -1334,7 +1335,7 @@ function App() {
               <div style={{ background: 'rgba(13, 148, 136, 0.05)', marginTop: '40px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
                 <h2 className="section-title">👶 Pediatrics & Neonatology – Baby and Mother Care at One Roof</h2>
               
-                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--primary)' }}>
+                <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--primary)' }}>
                   <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
                     The Pediatrics and Neonatology department at Gunjigavi Multispeciality Hospital offers comprehensive baby and mother care at one roof, with support for newborns, infants and children through a dedicated tertiary-care Neonatal Intensive Care Unit (NICU). Our NICU is equipped to manage extremely premature babies and very sick neonates using modern ventilation and monitoring systems.
                   </p>
@@ -1403,7 +1404,7 @@ function App() {
               <div style={{ background: 'rgba(217, 119, 6, 0.05)', marginTop: '40px', padding: '40px 0', borderRadius: '15px', marginBottom: '40px' }}>
                 <h2 className="section-title">👩‍⚕️ Obstetrics, Gynaecology & Infertility – Mother & Baby Care Under One Roof</h2>
               
-                <div style={{ background: 'white', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--accent)' }}>
+                <div style={{ background: 'var(--bg-card)', borderRadius: '15px', padding: '40px', marginBottom: '30px', boxShadow: 'var(--shadow-md)', borderLeft: '6px solid var(--accent)' }}>
                   <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '30px' }}>
                     Our Obstetrics and Gynaecology department provides complete care for women at every stage of life, with special focus on high-risk pregnancies and advanced infertility services. Mother and baby receive continuous care under one roof, from pre-conception counselling to delivery and postnatal follow-up.
                   </p>
