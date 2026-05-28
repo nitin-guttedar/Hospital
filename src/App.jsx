@@ -471,77 +471,91 @@ function App() {
           <>
 <section
                 className="hero-section hero-section--home animate-fade-up"
-                style={{ '--hero-bg-url': `url(${homeHeroBgImg})` }}
               >
-            <div className="container hero-grid">
-              <div className="hero-content">
-                <span className="hero-tagline">Compassion • Care • Commitment</span>
-                <h1 className="hero-title">
-                  Gunjigavi Multispeciality <span>Hospital, Athani</span>
-                </h1>
-                <p className="hero-desc">
-                  Compassionate, expert care for your entire family under one roof. Providing advanced medical solutions near Shivaji Circle on Madabhavi Road, Athani.
-                </p>
-                <div className="hero-buttons">
-                  <button className="btn-primary" onClick={() => handleTabClick('appointments')}>
-                    <Calendar size={18} /> Book Appointment
-                  </button>
-                  <a href="tel:9482384887" className="btn-outline">
-                    <Phone size={18} /> Call Now: 9482384887
-                  </a>
-                </div>
-                <div className="hero-stats">
-                  <div className="stat-item">
-                    <span className="stat-number">24/7</span>
-                    <span className="stat-label">Emergency Care</span>
+            <div className="container hero-home-container">
+              {/* Top Section: Image and Content in Flex */}
+              <div className="hero-home-flex">
+                <div className="hero-image-left animate-slide-in-left">
+                  <img 
+                    src={homeHeroBgImg} 
+                    alt="Gunjigavi Hospital Interior"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '12px',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
+                      minHeight: '400px'
+                    }}
+                  />
+                </div>                {/* Content */}
+                <div className="hero-content">
+                  <span className="hero-tagline">Compassion • Care • Commitment</span>
+                  <h1 className="hero-title">
+                    Gunjigavi Multispeciality <span>Hospital, Athani</span>
+                  </h1>
+                  <p className="hero-desc">
+                    Compassionate, expert care for your entire family under one roof. Providing advanced medical solutions near Shivaji Circle on Madabhavi Road, Athani.
+                  </p>
+                  <div className="hero-buttons">
+                    <button className="btn-primary" onClick={() => handleTabClick('appointments')}>
+                      <Calendar size={18} /> Book Appointment
+                    </button>
+                    <a href="tel:9482384887" className="btn-outline">
+                      <Phone size={18} /> Call Now: 9482384887
+                    </a>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-number">3+</span>
-                    <span className="stat-label">Specialist Doctors</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">100%</span>
-                    <span className="stat-label">Ethical Treatment</span>
+                  <div className="hero-stats">
+                    <div className="stat-item">
+                      <span className="stat-number">24/7</span>
+                      <span className="stat-label">Emergency Care</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-number">3+</span>
+                      <span className="stat-label">Specialist Doctors</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-number">100%</span>
+                      <span className="stat-label">Ethical Treatment</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Home Sidebar card detailing operational copydeck details */}
-              <div className="hero-image-wrapper">
-                <div className="hero-main-card">
-                  <div className="hero-card-header">
-                    <div className="hero-card-icon">
-                      <Heart size={22} />
-                    </div>
-                    <div className="hero-card-title">
-                      Trusted Hospital in Athani
-                      <div style={{ fontSize: '12px', fontWeight: '500', color: 'var(--text-secondary)' }}>Athani and Belagavi District Support</div>
-                    </div>
+              {/* Bottom Section: Full Width Card */}
+              <div className="hero-main-card" style={{ width: '100%' }}>
+                <div className="hero-card-header">
+                  <div className="hero-card-icon">
+                    <Heart size={22} />
                   </div>
-                  <ul className="hero-bullets">
-                    <li>
-                      <Check size={18} />
-                      <span>Pediatrics, Obstetrics & Gynaecology, and General Medicine under one roof.</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>Empanelled under Ayushman Bharat PM-JAY & Cashless Insurance schemes.</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>Modern clinic located at Deshpande Nagar, Athani – Pin 591304.</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>Professional doctors offering evidence-based, transparent healthcare.</span>
-                    </li>
-                  </ul>
-                  
-                  <div style={{ marginTop: '24px', display: 'flex', gap: '10px' }}>
-                    <button className="btn-outline" style={{ width: '100%', justifyContent: 'center' }} onClick={() => handleTabClick('about')}>
-                      Learn More <ChevronRight size={16} />
-                    </button>
+                  <div className="hero-card-title">
+                    Trusted Hospital in Athani
+                    <div style={{ fontSize: '12px', fontWeight: '500', color: 'var(--text-secondary)' }}>Athani and Belagavi District Support</div>
                   </div>
+                </div>
+                <ul className="hero-bullets">
+                  <li>
+                    <Check size={18} />
+                    <span>Pediatrics, Obstetrics & Gynaecology, and General Medicine under one roof.</span>
+                  </li>
+                  <li>
+                    <Check size={18} />
+                    <span>Empanelled under Ayushman Bharat PM-JAY & Cashless Insurance schemes.</span>
+                  </li>
+                  <li>
+                    <Check size={18} />
+                    <span>Modern clinic located at Deshpande Nagar, Athani – Pin 591304.</span>
+                  </li>
+                  <li>
+                    <Check size={18} />
+                    <span>Professional doctors offering evidence-based, transparent healthcare.</span>
+                  </li>
+                </ul>
+                
+                <div style={{ marginTop: '24px', display: 'flex', gap: '10px' }}>
+                  <button className="btn-outline" style={{ width: '100%', justifyContent: 'center' }} onClick={() => handleTabClick('about')}>
+                    Learn More <ChevronRight size={16} />
+                  </button>
                 </div>
               </div>
             </div>
