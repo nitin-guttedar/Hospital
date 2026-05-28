@@ -68,7 +68,7 @@ const imageCategoryMap = {
   "WaitingArea2.JPG": "building",
   "Waitingarea1.JPG": "building",
   "NICU.JPG": "maternity",
-  "MICU.JPG": "opd"
+  "MICU.JPG": "consultation"
 };
 
 // Category display names
