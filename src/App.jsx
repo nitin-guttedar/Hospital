@@ -37,15 +37,15 @@ const insuranceBannerImg = new URL('./assets/InsuranceImages/Insurance.jpeg', im
 
 // Gallery Images list - All 20 files from assets
 const galleryFiles = [
-  "7A9A5432.jpg", "7A9A5443.JPG", "7A9A5449.JPG", "7A9A5461.JPG", "7A9A5477.JPG",
-  "7A9A5499.JPG", "7A9A5509.JPG", "7A9A5522.JPG", "7A9A5540.JPG", "7A9A5550.JPG",
+  "Reception.JPG", "7A9A5443.JPG", "7A9A5449.JPG", "7A9A5461.JPG", "7A9A5477.JPG",
+  "7A9A5499.JPG", "7A9A5509.JPG", "7A9A5540.JPG", "7A9A5550.JPG",
   "7A9A5558.JPG", "7A9A5562.JPG", "7A9A5595.JPG", "7A9A5624.JPG", "7A9A5630.JPG",
-  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG", "NICU.JPG"
+  "7A9A5649.JPG", "7A9A5664.JPG", "7A9A5673.JPG", "7A9A5687.JPG", "7A9A5688.JPG", "WaitingArea2.JPG", "Waitingarea1.JPG", "NICU.JPG", "MICU.JPG"
 ];
 
 // Manual category mapping for each image - Customize each image's category here
 const imageCategoryMap = {
-  "7A9A5432.jpg": "reception",
+  "Reception.JPG": "reception",
   "7A9A5443.JPG": "building",
     "7A9A5443.JPG": "reception",
   "7A9A5449.JPG": "consultation",
@@ -53,7 +53,6 @@ const imageCategoryMap = {
   "7A9A5477.JPG": "reception",
   "7A9A5499.JPG": "consultation",
   "7A9A5509.JPG": "consultation",
-  "7A9A5522.JPG": "maternity",
   "7A9A5540.JPG": "maternity",
   "7A9A5550.JPG": "pediatric",
   "7A9A5558.JPG": "pediatric",
@@ -66,7 +65,10 @@ const imageCategoryMap = {
   "7A9A5673.JPG": "consultation",
   "7A9A5687.JPG": "building",
   "7A9A5688.JPG": "building",
-  "NICU.JPG": "maternity"
+  "WaitingArea2.JPG": "building",
+  "Waitingarea1.JPG": "building",
+  "NICU.JPG": "maternity",
+  "MICU.JPG": "opd"
 };
 
 // Category display names
@@ -75,7 +77,8 @@ const categoryNames = {
   reception: "Reception & Waiting Area",
   consultation: "Consultation Rooms",
   pediatric: "Pediatric Care Area",
-  maternity: "Maternity & Women's Care"
+  maternity: "Maternity & Women's Care",
+  opd: "OPD & Clinic"
 };
 
 // Map 20 images to clean filterable categories using the category map
@@ -618,7 +621,7 @@ function App() {
                     <strong>Consultant:</strong> Dr. Sai Shruthi S. Gunjigavi — M.B.B.S, M.D. (General Medicine)
                   </p>
                   <p style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600' }}>
-                    ⏰ Morning: 10:00 AM – 4:00 PM | Evening: 7:00 PM – 9:00 PM
+                    ⏰ Morning: 10:00 AM – 4:00 PM | Evening: 6:00 PM – 7:30 PM
                   </p>
                 </div>
                 
